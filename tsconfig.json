@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"]
+    },
+    "types": ["@types/node", "@nuxt/types"],
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src", "node_modules/vue-tsx-support/enable-check.d.ts"],
+  "exclude": ["node_modules"]
+}

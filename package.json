@@ -1,0 +1,30 @@
+{
+  "name": "caramelize",
+  "version": "1.0.0",
+  "description": "My badass Nuxt.js project",
+  "author": "ci7lus",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start",
+    "format": "prettier --write './src/**/*.{html,css,scss,pcss,js,ts,tsx,vue}'",
+    "lint:prettier": "prettier --check './src/**/*.{html,css,scss,pcss,js,ts,tsx,vue}'"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.3.8",
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.11.0",
+    "vue-tsx-support": "^2.3.3"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.5.6",
+    "@nuxtjs/tailwindcss": "^1.3.2",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.16.4",
+    "tailwindcss": "^1.0.0"
+  }
+}

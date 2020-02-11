@@ -1,7 +1,6 @@
 import Vue, { VNode, CreateElement } from "vue"
 import * as tsx from "vue-tsx-support"
 import { Post } from "~/types/struct"
-import dayjs from "dayjs"
 import { formatString } from "~/constants"
 import { PageType, LineNodeType } from "@progfay/scrapbox-parser"
 import { SCRAPBOX_PROJECT } from "~/config"
@@ -12,6 +11,8 @@ import {
 import VueHighlightJS from "vue-highlight.js"
 import "vue-highlight.js/lib/allLanguages"
 import "highlight.js/styles/tomorrow-night.css"
+import moment from "moment"
+import "moment-timezone"
 
 Vue.use(VueHighlightJS, {})
 
@@ -34,11 +35,15 @@ export const ThePostDetail = tsx.component({
           <span class="pr-2">
             <FeatherEditIcon />
           </span>
-          {dayjs(this.post.createdAt).format(formatString)}
+          {moment(this.post.createdAt)
+            .tz("Asia/Tokyo")
+            .format(formatString)}
           <span class="px-2">
             <FeatherClockIcon />
           </span>
-          {dayjs(this.post.updatedAt).format(formatString)}
+          {moment(this.post.updatedAt)
+            .tz("Asia/Tokyo")
+            .format(formatString)}
         </p>
         <div class="content leading-loose break-words">
           {contentRender(this.post.content!, h)}

@@ -16,7 +16,6 @@
     "@nuxt/typescript-runtime": "^0.3.8",
     "@nuxtjs/axios": "^5.3.6",
     "@progfay/scrapbox-parser": "^4.0.0-0",
-    "dayjs": "^1.8.20",
     "highlight.js": "^9.18.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",

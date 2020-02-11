@@ -1,12 +1,13 @@
 import Vue, { VNode } from "vue"
 import * as tsx from "vue-tsx-support"
 import { Post } from "~/types/struct"
-import dayjs from "dayjs"
 import {
   FeatherClockIcon,
   FeatherEditIcon,
 } from "~/components/commons/FeatherIcons"
 import { formatString } from "~/constants"
+import moment from "moment"
+import "moment-timezone"
 
 export const PostCard = tsx.component({
   name: "PostCard",
@@ -52,11 +53,15 @@ export const PostCard = tsx.component({
               <span class="pr-2">
                 <FeatherEditIcon />
               </span>
-              {dayjs(this.post.createdAt).format(formatString)}
+              {moment(this.post.createdAt)
+                .tz("Asia/Tokyo")
+                .format(formatString)}
               <span class="px-2">
                 <FeatherClockIcon />
               </span>
-              {dayjs(this.post.updatedAt).format(formatString)}
+              {moment(this.post.updatedAt)
+                .tz("Asia/Tokyo")
+                .format(formatString)}
             </p>
             <p class="break-words">{this.post.description}…</p>
           </div>

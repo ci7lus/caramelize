@@ -6,5 +6,12 @@
       "use": "@nuxtjs/now-builder",
       "config": {}
     }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "headers": { "Cache-Control": "s-maxage=600, stale-while-revalidat" },
+      "continue": true
+    }
   ]
 }

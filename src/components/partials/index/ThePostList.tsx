@@ -25,7 +25,7 @@ export const ThePostList = tsx.component({
           {this.posts.map(post => (
             <PostCard post={post} key={post.title} />
           ))}
-          <div class="flex justify-center pt-2">
+          <div class="flex justify-center p-4">
             <nuxt-link
               to={`/?p=${this.page === 0 ? this.page : this.page - 1}`}
               tag="button"

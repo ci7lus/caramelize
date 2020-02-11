@@ -1226,6 +1226,11 @@
   dependencies:
     "@types/webpack" "*"
 
+"@types/highlight.js@^9.12.3":
+  version "9.12.3"
+  resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.12.3.tgz#b672cfaac25cbbc634a0fd92c515f66faa18dbca"
+  integrity sha512-pGF/zvYOACZ/gLGWdQH8zSwteQS1epp68yRcVLJMgUck/MjEn/FBYmPub9pXT8C1e4a8YZfHo1CKyV8q1vKUnQ==
+
 "@types/html-minifier@^3.5.3":
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/@types/html-minifier/-/html-minifier-3.5.3.tgz#5276845138db2cebc54c789e0aaf87621a21e84f"
@@ -4020,6 +4025,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highlight.js@^9.18.1:
+  version "9.18.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.1.tgz#ed21aa001fe6252bb10a3d76d47573c6539fe13c"
+  integrity sha512-OrVKYz70LHsnCgmbXctv/bfuvntIKDz177h0Co37DQ5jamGZLVmoCVMtjMtNZY3X9DrCcKfklHPNeA0uPZhSJg==
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -4226,6 +4236,11 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
+
+indent-string@^3.0.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz#4a5fd6d27cc332f37e5419a504dbb837105c9289"
+  integrity sha1-Sl/W0nzDMvN+VBmlBNu4NxBckok=
 
 indent-string@^4.0.0:
   version "4.0.0"
@@ -6666,6 +6681,14 @@ readdirp@~3.3.0:
   dependencies:
     picomatch "^2.0.7"
 
+redent@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/redent/-/redent-2.0.0.tgz#c1b2007b42d57eb1389079b3c8333639d5e1ccaa"
+  integrity sha1-wbIAe0LVfrE4kHmzyDM2OdXhzKo=
+  dependencies:
+    indent-string "^3.0.0"
+    strip-indent "^2.0.0"
+
 reduce-css-calc@^2.1.6:
   version "2.1.7"
   resolved "https://registry.yarnpkg.com/reduce-css-calc/-/reduce-css-calc-2.1.7.tgz#1ace2e02c286d78abcd01fd92bfe8097ab0602c2"
@@ -7334,6 +7357,11 @@ strip-final-newline@^2.0.0:
   resolved "https://registry.yarnpkg.com/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
   integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
 
+strip-indent@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-2.0.0.tgz#5ef8db295d01e6ed6cbf7aab96998d7822527b68"
+  integrity sha1-XvjbKV0B5u1sv3qrlpmNeCJSe2g=
+
 strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
@@ -7589,6 +7617,11 @@ touch@^3.1.0:
   dependencies:
     nopt "~1.0.10"
 
+transform-ts@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/transform-ts/-/transform-ts-0.3.0.tgz#6bdd81abf79d3aebc03ef60ef7731ee378539b49"
+  integrity sha512-8BGag7tLPt8FfNOTF1UCVyGQYv4RdbrdXxcTt6FdHSWHGAWAMwHiLjNbtxFfE057KNvs15Y7wvBHpK6r/c8LLA==
+
 tryer@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
@@ -7616,7 +7649,7 @@ ts-node@^8.6.2:
     source-map-support "^0.5.6"
     yn "3.1.1"
 
-tslib@^1.9.0:
+tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
@@ -7930,6 +7963,15 @@ vue-feather-icons@^5.0.0:
   integrity sha512-uvi2l3i0aeRRzG3vX24/AH+8BkcXkSJboAv8XkUZ6aPkEC9n6LXDcKp5/ho+3moVQ9wlga3N6BjL89pmkHBzPw==
   dependencies:
     babel-helper-vue-jsx-merge-props "^2.0.2"
+
+vue-highlight.js@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/vue-highlight.js/-/vue-highlight.js-3.1.0.tgz#87b60b4931fd310b318f2b2c9116fe71b69dd053"
+  integrity sha512-i55SERtdV0CYQppGo29iT6NOq+oOenOKVwkLWZRt7bSynbsQoj/e8GJy/5xL1s5OOYObC/CxA39bRadVyPQt1A==
+  dependencies:
+    detect-indent "^5.0.0"
+    redent "^2.0.0"
+    tslib "^1.9.3"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"

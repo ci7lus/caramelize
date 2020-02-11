@@ -16,6 +16,7 @@
     },
     "types": ["@types/node", "@nuxt/types"],
     "jsx": "preserve",
+    "jsxFactory": "h",
     "resolveJsonModule": true,
     "experimentalDecorators": true
   },

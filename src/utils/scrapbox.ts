@@ -1,4 +1,3 @@
-import { SCRAPBOX_PROJECT, SCRAPBOX_TAG } from "../../caramelize.config.json"
 import fetch from "node-fetch"
 import {
   ScrapboxError,
@@ -10,6 +9,7 @@ import { parse } from "@progfay/scrapbox-parser"
 import querystring from "querystring"
 import moment from "moment"
 import "moment-timezone"
+import { SCRAPBOX_PROJECT, SCRAPBOX_TAG } from "~/config"
 
 export const getPageMeta = async (projectName: string, pageName: string) => {
   const url = process.server
@@ -37,7 +37,7 @@ export const getPost = async (slug: string) => {
     return null
   }
   const text = meta.lines.map(line => line.text).join(" \n")
-  if (!text.includes(SCRAPBOX_TAG)) {
+  if (!text.toLowerCase().includes(SCRAPBOX_TAG.toLowerCase())) {
     return null
   }
   const parsed = parse(text)

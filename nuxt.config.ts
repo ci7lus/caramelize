@@ -1,4 +1,5 @@
 import { Configuration } from "@nuxt/types"
+import caramelizeConfig from "./caramelize.config.json"
 
 const config: Configuration = {
   mode: "universal",
@@ -6,7 +7,7 @@ const config: Configuration = {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    titleTemplate: "%s | Caramelize",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -16,7 +17,7 @@ const config: Configuration = {
         content: process.env.npm_package_description || "",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    // link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
   /*
    ** Customize the progress-bar color
@@ -25,7 +26,7 @@ const config: Configuration = {
   /*
    ** Global CSS
    */
-  css: ["~/assets/css/tailwind.css"],
+  css: [],
   /*
    ** Plugins to load before mounting the App
    */
@@ -36,6 +37,7 @@ const config: Configuration = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
+    "@nuxtjs/proxy",
   ],
   /*
    ** Axios module configuration
@@ -46,18 +48,16 @@ const config: Configuration = {
    ** Build configuration
    */
   build: {
-    /*postcss: {
-      plugins: {
-        tailwindcss: "./tailwind.config.js",
-      },
-    },*/
     /*
      ** You can extend webpack config here
      */
     extend(config, ctx) {},
     parallel: true,
   },
-  buildModules: ["@nuxt/typescript-build", "@nuxtjs/tailwindcss"],
+  buildModules: ["@nuxtjs/tailwindcss", "@nuxt/typescript-build"],
+  purgeCSS: {
+    enabled: false,
+  },
   srcDir: "./src",
 }
 

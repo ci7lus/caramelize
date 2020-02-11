@@ -59,6 +59,14 @@ const config: Configuration = {
     enabled: false,
   },
   srcDir: "./src",
+  proxy: {
+    "/api": {
+      target: `https://scrapbox.io`,
+      pathRewrite: {
+        "/api": `/api/pages/${caramelizeConfig.SCRAPBOX_PROJECT}`,
+      },
+    },
+  },
 }
 
 export default config

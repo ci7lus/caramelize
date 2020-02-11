@@ -19,6 +19,10 @@
     "resolveJsonModule": true,
     "experimentalDecorators": true
   },
-  "include": ["src", "node_modules/vue-tsx-support/enable-check.d.ts"],
+  "include": [
+    "nuxt.config.ts",
+    "src",
+    "node_modules/vue-tsx-support/enable-check.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

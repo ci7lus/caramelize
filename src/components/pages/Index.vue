@@ -15,18 +15,21 @@ export default Vue.extend({
   components: { ThePostList },
   head() {
     return {
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: `最新の記事は "${this.posts[0].title}" です`,
-        },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content: `最新の記事は "${this.posts[0].title}" です`,
-        },
-      ],
+      meta:
+        0 < this.posts.length
+          ? [
+              {
+                hid: "description",
+                name: "description",
+                content: `最新の記事は "${this.posts[0].title}" です`,
+              },
+              {
+                hid: "og:description",
+                name: "og:description",
+                content: `最新の記事は "${this.posts[0].title}" です`,
+              },
+            ]
+          : [],
     }
   },
 })

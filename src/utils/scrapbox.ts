@@ -37,7 +37,7 @@ export const getPost = async (slug: string) => {
     return null
   }
   const text = meta.lines.map(line => line.text).join(" \n")
-  if (!text.toLowerCase().includes(SCRAPBOX_TAG.toLowerCase())) {
+  if (!text.toLowerCase().includes(`${SCRAPBOX_TAG.toLowerCase()} `)) {
     return null
   }
   const parsed = parse(text)
@@ -102,29 +102,40 @@ export const getPosts = async (
     return []
   }
 
-  return body.pages.slice(page * limit, page * limit + limit).map(page => {
-    const tags =
-      page.snipet.length !== 0
-        ? page.snipet[0]
-            .replace(/\<(\/|).+?\>/g, "")
-            .replace(/#/g, "")
-            .split(" ")
-            .filter(tag => tag.toLowerCase() !== "blog")
-        : []
-    const p: Omit<Post, "content"> = {
-      id: page.id,
-      title: page.title,
-      description: page.descriptions.join(" ").slice(0, 100),
-      image: page.image,
-      user: page.user,
-      tags,
-      createdAt: moment(page.created * 1000)
-        .tz("Asia/Tokyo")
-        .format(),
-      updatedAt: moment(page.updated * 1000)
-        .tz("Asia/Tokyo")
-        .format(),
-    }
-    return p
-  })
+  return body.pages
+    .filter(page =>
+      page.snipet[0]
+        .replace(/\<(\/|).+?\>/g, "")
+        .toLowerCase()
+        .includes(`${SCRAPBOX_TAG.toLowerCase()} `)
+    )
+    .slice(page * limit, page * limit + limit)
+    .map(page => {
+      const tags =
+        page.snipet.length !== 0
+          ? page.snipet[0]
+              .replace(/\<(\/|).+?\>/g, "")
+              .split(" ")
+              .filter(tag => tag.includes("#"))
+              .join(" ")
+              .replace(/#/g, "")
+              .split(" ")
+              .filter(tag => tag.toLowerCase() !== "blog")
+          : []
+      const p: Omit<Post, "content"> = {
+        id: page.id,
+        title: page.title,
+        description: page.descriptions.join(" ").slice(0, 100),
+        image: page.image,
+        user: page.user,
+        tags,
+        createdAt: moment(page.created * 1000)
+          .tz("Asia/Tokyo")
+          .format(),
+        updatedAt: moment(page.updated * 1000)
+          .tz("Asia/Tokyo")
+          .format(),
+      }
+      return p
+    })
 }

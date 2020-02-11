@@ -16,6 +16,7 @@
     "@nuxt/typescript-runtime": "^0.3.8",
     "@nuxtjs/axios": "^5.3.6",
     "nuxt": "^2.11.0",
+    "vue-feather-icons": "^5.0.0",
     "vue-tsx-support": "^2.3.3"
   },
   "devDependencies": {

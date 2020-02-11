@@ -4,8 +4,9 @@
 
 <script lang="ts">
 import Vue from "vue"
-import { Index } from "~/components/pages/index"
+import Index from "~/components/pages/Index.vue"
 import { getPosts } from "~/utils/scrapbox"
+import { SITE_NAME } from "../config"
 
 export default Vue.extend({
   components: { Index },
@@ -22,7 +23,7 @@ export default Vue.extend({
     }
   },
   head: {
-    title: "Caramelize",
+    title: SITE_NAME,
     titleTemplate: "",
   },
 })

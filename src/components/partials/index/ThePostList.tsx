@@ -3,8 +3,8 @@ import * as tsx from "vue-tsx-support"
 import { Post } from "~/types/struct"
 import { PostCard } from "~/components/partials/index/PostCard"
 
-export const Index = tsx.component({
-  name: "Index",
+export const ThePostList = tsx.component({
+  name: "ThePostList",
   props: {
     page: {
       type: Number,

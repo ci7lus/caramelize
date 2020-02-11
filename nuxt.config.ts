@@ -1,5 +1,9 @@
 import { Configuration } from "@nuxt/types"
-import caramelizeConfig from "./caramelize.config.json"
+import {
+  SITE_NAME,
+  TWITTER_ID,
+  SCRAPBOX_PROJECT,
+} from "./caramelize.config.json"
 
 const config: Configuration = {
   mode: "universal",
@@ -7,17 +11,27 @@ const config: Configuration = {
    ** Headers of the page
    */
   head: {
-    titleTemplate: "%s | Caramelize",
+    titleTemplate: `%s | ${SITE_NAME}`,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || "",
+        content: "My Blog",
+      },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content: "My Blog",
+      },
+      {
+        hid: "og:site_name",
+        name: "og:site_name",
+        content: SITE_NAME,
       },
     ],
-    // link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/jpeg", href: "/favicon.jpg" }],
   },
   /*
    ** Customize the progress-bar color
@@ -63,10 +77,23 @@ const config: Configuration = {
     "/api": {
       target: `https://scrapbox.io`,
       pathRewrite: {
-        "/api": `/api/pages/${caramelizeConfig.SCRAPBOX_PROJECT}`,
+        "/api": `/api/pages/${SCRAPBOX_PROJECT}`,
       },
     },
   },
+}
+
+if (typeof TWITTER_ID === "string") {
+  config.head!.meta!.push({
+    hid: "twitter:site",
+    name: "twitter:site",
+    content: `@${TWITTER_ID}`,
+  })
+  config.head!.meta!.push({
+    hid: "twitter:card",
+    name: "twitter:card",
+    content: "summary",
+  })
 }
 
 export default config

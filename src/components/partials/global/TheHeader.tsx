@@ -9,7 +9,7 @@ export const TheHeader = tsx.component({
         <div class="container mx-auto flex justify-between max-w-screen-md">
           <nuxt-link to="/" tag="a">
             <div class="flex items-center justify-start mx-4 my-3">
-              <img src="/caramelize.svg" width="100" />
+              <img src="/logo.svg" width="100" />
             </div>
           </nuxt-link>
         </div>

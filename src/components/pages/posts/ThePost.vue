@@ -16,25 +16,33 @@ export default Vue.extend({
   },
   components: { ThePostDetail },
   head() {
+    const meta = [
+      {
+        hid: "og:title",
+        name: "og:title",
+        content: this.post.title,
+      },
+      {
+        hid: "description",
+        name: "description",
+        content: `"${this.post.description}"`,
+      },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content: `"${this.post.description}"`,
+      },
+    ]
+    if (this.post.image) {
+      meta.push({
+        hid: "og:image",
+        name: "og:image",
+        content: this.post.image,
+      })
+    }
     return {
       title: this.post.title,
-      meta: [
-        {
-          hid: "og:title",
-          name: "og:title",
-          content: this.post.title,
-        },
-        {
-          hid: "description",
-          name: "description",
-          content: `"${this.post.description}"`,
-        },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content: `"${this.post.description}"`,
-        },
-      ],
+      meta,
     }
   },
 })

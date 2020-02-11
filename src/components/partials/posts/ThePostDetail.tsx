@@ -160,7 +160,7 @@ export const lineNodeTypeRender = (
         case "relative":
           return (
             <img
-              class="icon"
+              class="w-6 inline"
               src={`https://scrapbox.io/api/pages/${SCRAPBOX_PROJECT}/${encodeURIComponent(
                 node.path
               )}/icon`}
@@ -170,7 +170,7 @@ export const lineNodeTypeRender = (
         case "root":
           return (
             <img
-              class="icon"
+              class="w-6 inline"
               src={`https://scrapbox.io/api/pages${node.path}/icon`}
               key={key}
             />

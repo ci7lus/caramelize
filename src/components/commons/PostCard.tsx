@@ -23,11 +23,9 @@ export const PostCard = tsx.component({
         <nuxt-link
           to={`/posts/${this.post.title}`}
           tag="div"
-          class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l"
+          class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center"
           style={{
             backgroundImage: this.post.image ? `url("${this.post.image}")` : "",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
           }}
         />
         <div class="bg-gray-800 p-4 flex flex-col justify-between leading-normal rounded-b lg:rounded-b-none lg:rounded-r md:w-3/4">
@@ -44,7 +42,7 @@ export const PostCard = tsx.component({
                 </nuxt-link>
               ))}
             </div>
-            <div class="font-bold text-xl mb-2 truncate">
+            <div class="font-bold text-xl mb-2 break-words">
               <nuxt-link to={`/posts/${this.post.title}`} tag="a">
                 {this.post.title}
               </nuxt-link>

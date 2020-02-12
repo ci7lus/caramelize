@@ -20,7 +20,8 @@
       "SCRAPBOX_TAG": "@caramelize-scrapbox-tag",
       "TWITTER_ID": "@caramelize-twitter-id",
       "SITE_NAME": "@caramelize-site-name",
-      "SITE_ROOT": "@caramelize-site-root"
+      "SITE_ROOT": "@caramelize-site-root",
+      "GA": "@caramelize-ga"
     }
   },
   "env": {
@@ -28,6 +29,7 @@
     "SCRAPBOX_TAG": "@caramelize-scrapbox-tag",
     "TWITTER_ID": "@caramelize-twitter-id",
     "SITE_NAME": "@caramelize-site-name",
-    "SITE_ROOT": "@caramelize-site-root"
+    "SITE_ROOT": "@caramelize-site-root",
+    "GA": "@caramelize-ga"
   }
 }

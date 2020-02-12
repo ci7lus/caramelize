@@ -20,6 +20,7 @@ now にビルドする場合は secrets 経由で設定します。使わない�
 | TWITTER_ID       | Twitter の ScreenName （@ 抜き） を指定します | いいえ |
 | SITE_NAME        | サイト名を指定します                          | いいえ | Caramelize   |
 | SITE_ROOT        | サイトのメインホスト名を指定します            | いいえ |
+| GA               | Google Analytics のタグを設定します           | いいえ |
 
 ## 開発
 

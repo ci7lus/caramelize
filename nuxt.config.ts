@@ -4,6 +4,8 @@ import {
   TWITTER_ID,
   SCRAPBOX_PROJECT,
   SCRAPBOX_TAG,
+  GA,
+  isProduction,
 } from "./src/config"
 
 const config: Configuration = {
@@ -86,6 +88,15 @@ const config: Configuration = {
     SCRAPBOX_PROJECT: SCRAPBOX_PROJECT,
     SCRAPBOX_TAG: SCRAPBOX_TAG,
   },
+}
+
+if (GA && isProduction) {
+  config.buildModules!.push([
+    "@nuxtjs/google-analytics",
+    {
+      id: GA,
+    },
+  ])
 }
 
 if (TWITTER_ID) {

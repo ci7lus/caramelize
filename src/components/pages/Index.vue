@@ -1,5 +1,7 @@
 <template>
-  <ThePostList :page="page" :posts="posts" />
+  <div>
+    <ThePostList :page="page" :posts="posts" />
+  </div>
 </template>
 
 <script lang="ts">

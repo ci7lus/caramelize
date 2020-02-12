@@ -34,7 +34,9 @@ export default Vue.extend({
         ? [
             {
               rel: "canonical",
-              href: `https://${SITE_ROOT}/tags/${encodeURIComponent(this.tag)}`,
+              href: `https://${SITE_ROOT}/tags/${encodeURIComponent(
+                this.tag.toLowerCase()
+              )}`,
             },
           ]
         : [],

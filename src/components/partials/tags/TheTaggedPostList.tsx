@@ -2,9 +2,10 @@ import Vue, { VNode } from "vue"
 import * as tsx from "vue-tsx-support"
 import { Post } from "~/types/struct"
 import { PostCard } from "~/components/commons/PostCard"
+import xss from "xss"
 
-export const ThePostList = tsx.component({
-  name: "ThePostList",
+export const TheTaggedPostList = tsx.component({
+  name: "TheTaggedPostList",
   props: {
     page: {
       type: Number,
@@ -12,6 +13,10 @@ export const ThePostList = tsx.component({
     },
     posts: {
       type: Array as () => Omit<Post, "content">[],
+      required: true,
+    },
+    tag: {
+      type: String,
       required: true,
     },
   },
@@ -22,12 +27,17 @@ export const ThePostList = tsx.component({
     return (
       <div class="container mx-auto max-w-screen-md">
         <div class="p-4">
+          <h1 class="border-b border-l-4 border-gray-400 pl-2 py-1 font-bold">
+            #{xss.filterXSS(this.tag)} のついた投稿 ({this.page + 1}ページ目)
+          </h1>
           {this.posts.map(post => (
             <PostCard post={post} key={post.title} />
           ))}
           <div class="flex justify-center p-4">
             <nuxt-link
-              to={`/?p=${this.page === 0 ? this.page : this.page - 1}`}
+              to={`/tags/${this.tag}/?p=${
+                this.page === 0 ? this.page : this.page - 1
+              }`}
               tag="button"
               class={`bg-gray-600 hover:bg-gray-500 text-gray-200 font-bold py-2 px-4 rounded-l ${this
                 .page === 0 &&
@@ -36,7 +46,9 @@ export const ThePostList = tsx.component({
               Prev
             </nuxt-link>
             <nuxt-link
-              to={`/?p=${this.posts.length < 10 ? this.page : this.page + 1}`}
+              to={`/tags/${this.tag}/?p=${
+                this.posts.length < 10 ? this.page : this.page + 1
+              }`}
               tag="button"
               class="bg-gray-600 hover:bg-gray-500 text-gray-200 font-bold py-2 px-4 rounded-r"
             >

@@ -44,7 +44,7 @@ const config: Configuration = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ["~/assets/css/global.css"],
   /*
    ** Plugins to load before mounting the App
    */

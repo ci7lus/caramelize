@@ -31,15 +31,14 @@ export default Vue.extend({
               },
             ]
           : [],
-      link:
-        typeof SITE_ROOT === "string"
-          ? [
-              {
-                rel: "canonical",
-                href: `https://${SITE_ROOT}`,
-              },
-            ]
-          : [],
+      link: SITE_ROOT
+        ? [
+            {
+              rel: "canonical",
+              href: `https://${SITE_ROOT}`,
+            },
+          ]
+        : [],
     }
   },
 })

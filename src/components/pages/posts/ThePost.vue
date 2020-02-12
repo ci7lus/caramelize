@@ -43,7 +43,7 @@ export default Vue.extend({
       })
     }
     const link: NuxtConfigurationHead["link"] = []
-    if (typeof SITE_ROOT === "string") {
+    if (SITE_ROOT) {
       link.push({
         rel: "canonical",
         href: `https://${SITE_ROOT}/posts/${encodeURIComponent(

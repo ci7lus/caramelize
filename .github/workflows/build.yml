@@ -22,3 +22,6 @@ jobs:
       - name: Build
         run: |
           yarn build
+        env:
+          SCRAPBOX_PROJECT: "ci7lus"
+          SCRAPBOX_TAG: "#blog"

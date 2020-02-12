@@ -3,7 +3,8 @@ import {
   SITE_NAME,
   TWITTER_ID,
   SCRAPBOX_PROJECT,
-} from "./caramelize.config.json"
+  SCRAPBOX_TAG,
+} from "./src/config"
 
 const config: Configuration = {
   mode: "universal",
@@ -81,9 +82,13 @@ const config: Configuration = {
       },
     },
   },
+  env: {
+    SCRAPBOX_PROJECT: SCRAPBOX_PROJECT,
+    SCRAPBOX_TAG: SCRAPBOX_TAG,
+  },
 }
 
-if (typeof TWITTER_ID === "string") {
+if (TWITTER_ID) {
   config.head!.meta!.push({
     hid: "twitter:site",
     name: "twitter:site",

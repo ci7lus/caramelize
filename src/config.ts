@@ -1,13 +1,21 @@
 import $ from "transform-ts"
-import config from "../caramelize.config.json"
 
 export const SCRAPBOX_PROJECT = $.string.transformOrThrow(
-  config.SCRAPBOX_PROJECT
+  process.env.SCRAPBOX_PROJECT
 )
-export const SCRAPBOX_TAG = $.string.transformOrThrow(config.SCRAPBOX_TAG)
+export const SCRAPBOX_TAG = $.string.transformOrThrow(process.env.SCRAPBOX_TAG)
 
-export const TWITTER_ID = config.TWITTER_ID || null
+export const TWITTER_ID =
+  !!process.env.TWITTER_ID && process.env.TWITTER_ID !== "null"
+    ? $.string.transformOrThrow(process.env.TWITTER_ID)
+    : null
 
-export const SITE_NAME = config.SITE_NAME || "Caramelize"
+export const SITE_NAME =
+  !!process.env.SITE_NAME && process.env.SITE_NAME !== "null"
+    ? $.string.transformOrThrow(process.env.SITE_NAME)
+    : "Caramelize"
 
-export const SITE_ROOT = config.SITE_ROOT || null
+export const SITE_ROOT =
+  !!process.env.SITE_ROOT && process.env.SITE_ROOT !== "null"
+    ? $.string.transformOrThrow(process.env.SITE_ROOT)
+    : null

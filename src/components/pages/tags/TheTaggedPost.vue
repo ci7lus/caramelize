@@ -30,17 +30,14 @@ export default Vue.extend({
           content: `#${this.tag} がついた投稿の一覧です`,
         },
       ],
-      link:
-        typeof SITE_ROOT === "string"
-          ? [
-              {
-                rel: "canonical",
-                href: `https://${SITE_ROOT}/tags/${encodeURIComponent(
-                  this.tag
-                )}`,
-              },
-            ]
-          : [],
+      link: SITE_ROOT
+        ? [
+            {
+              rel: "canonical",
+              href: `https://${SITE_ROOT}/tags/${encodeURIComponent(this.tag)}`,
+            },
+          ]
+        : [],
     }
   },
 })

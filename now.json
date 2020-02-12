@@ -13,5 +13,21 @@
       "headers": { "Cache-Control": "s-maxage=600, stale-while-revalidat" },
       "continue": true
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "SCRAPBOX_PROJECT": "@caramelize-scrapbox-project",
+      "SCRAPBOX_TAG": "@caramelize-scrapbox-tag",
+      "TWITTER_ID": "@caramelize-twitter-id",
+      "SITE_NAME": "@caramelize-site-name",
+      "SITE_ROOT": "@caramelize-site-root"
+    }
+  },
+  "env": {
+    "SCRAPBOX_PROJECT": "@caramelize-scrapbox-project",
+    "SCRAPBOX_TAG": "@caramelize-scrapbox-tag",
+    "TWITTER_ID": "@caramelize-twitter-id",
+    "SITE_NAME": "@caramelize-site-name",
+    "SITE_ROOT": "@caramelize-site-root"
+  }
 }

@@ -1112,10 +1112,10 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
-"@progfay/scrapbox-parser@^4.0.0-0":
+"@tosuke/scrapbox-parser@^4.0.0-0":
   version "4.0.0-0"
-  resolved "https://registry.yarnpkg.com/@progfay/scrapbox-parser/-/scrapbox-parser-4.0.0-0.tgz#9bee3c35f860145b599176f9ff359d2da602a2d9"
-  integrity sha512-x9KIvloCELjRh+3Nzmm/u+ozSE5msayuOKLs+E/ri1QbXb9BiV52R8MmPbZS4tgE10INFbmt/OLKBHbyhKAEig==
+  resolved "https://registry.yarnpkg.com/@tosuke/scrapbox-parser/-/scrapbox-parser-4.0.0-0.tgz#d2598e0e3c7b973848394a8896ced608e5a6c9cd"
+  integrity sha512-sqLYTj35YsCwY0L75dhrP/O+spqsArzLRfp5EGeY/ily1472rIXkuYj92TGWLt+I+7poBRqpVS8maBKkfF3TrQ==
 
 "@types/anymatch@*":
   version "1.3.1"

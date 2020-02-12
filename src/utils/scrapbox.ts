@@ -5,7 +5,7 @@ import {
   ScrapboxSearchResult,
 } from "~/types/scrapbox"
 import { Post } from "~/types/struct"
-import { parse } from "@progfay/scrapbox-parser"
+import { parse } from "@tosuke/scrapbox-parser"
 import querystring from "querystring"
 import moment from "moment"
 import "moment-timezone"

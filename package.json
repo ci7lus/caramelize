@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.3.8",
     "@nuxtjs/axios": "^5.9.5",
-    "@progfay/scrapbox-parser": "^4.0.0-0",
+    "@tosuke/scrapbox-parser": "^4.0.0-0",
     "highlight.js": "^9.18.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",

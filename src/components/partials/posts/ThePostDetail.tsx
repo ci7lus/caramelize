@@ -2,7 +2,7 @@ import Vue, { VNode, CreateElement } from "vue"
 import * as tsx from "vue-tsx-support"
 import { Post } from "~/types/struct"
 import { formatString } from "~/constants"
-import { PageType, LineNodeType } from "@progfay/scrapbox-parser"
+import { PageType, LineNodeType } from "@tosuke/scrapbox-parser"
 import { SCRAPBOX_PROJECT } from "~/config"
 import {
   FeatherEditIcon,

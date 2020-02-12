@@ -1,4 +1,4 @@
-import { PageType } from "@progfay/scrapbox-parser"
+import { PageType } from "@tosuke/scrapbox-parser"
 import { ScrapboxUser } from "./scrapbox"
 
 export type Post = {

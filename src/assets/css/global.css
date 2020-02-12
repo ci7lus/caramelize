@@ -1,3 +1,25 @@
 body {
   background-color: black;
 }
+
+img[lazy] {
+  transition: all 0.3s ease-out;
+}
+
+img[lazy="loading"] {
+  opacity: 0;
+}
+
+img[lazy="loaded"] {
+  opacity: 1;
+}
+
+.has-background {
+  transition: background-color 0.3s ease-out;
+  background-blend-mode: lighten;
+  background-color: rgba(74, 85, 104, 0.8);
+}
+
+.has-background[lazy="loaded"] {
+  background-color: rgba(74, 85, 104, 0);
+}

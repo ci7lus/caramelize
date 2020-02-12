@@ -9,6 +9,7 @@ import { formatString } from "~/constants"
 import moment from "moment"
 import "moment-timezone"
 import { PostTag } from "./PostTag"
+import BackgroundImage from "~/components/commons/BackgroundImage.vue"
 
 export const PostCard = tsx.component({
   name: "PostCard",
@@ -20,6 +21,7 @@ export const PostCard = tsx.component({
   },
   components: {
     PostTag,
+    BackgroundImage,
   },
   methods: {
     handleClickTag(tag: string) {
@@ -35,14 +37,14 @@ export const PostCard = tsx.component({
           class="md:max-w-full block"
         >
           <div class="md:max-w-full md:flex items-stretch py-4 block">
-            <div
-              class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center"
-              style={{
-                backgroundImage: this.post.image
-                  ? `url("${this.post.image}")`
-                  : "",
-              }}
-            />
+            {this.post.image ? (
+              <BackgroundImage
+                class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center"
+                img={this.post.image}
+              />
+            ) : (
+              <div class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center" />
+            )}
             <div class="bg-gray-800 p-4 flex flex-col justify-between leading-normal rounded-b lg:rounded-b-none lg:rounded-r md:w-3/4">
               <div class="mb-4">
                 <div class="pb-2">

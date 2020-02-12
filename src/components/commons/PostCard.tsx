@@ -19,16 +19,24 @@ export const PostCard = tsx.component({
   },
   render(): VNode {
     return (
-      <div class="md:max-w-full md:flex py-4">
-        <nuxt-link
-          to={`/posts/${this.post.title}`}
-          tag="div"
+      <nuxt-link
+        to={`/posts/${this.post.title}`}
+        class="md:max-w-full md:flex py-4 block"
+      >
+        <img
+          src={this.post.image || ""}
           class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center"
           style={{
-            backgroundImage: this.post.image ? `url("${this.post.image}")` : "",
+            objectFit: "cover",
           }}
         />
-        <div class="bg-gray-800 p-4 flex flex-col justify-between leading-normal rounded-b lg:rounded-b-none lg:rounded-r md:w-3/4">
+        <div
+          class="bg-gray-800 p-4 flex flex-col justify-between leading-normal rounded-b lg:rounded-b-none lg:rounded-r md:w-3/4"
+          onClick={(event: Event) => {
+            event.preventDefault()
+            event.stopPropagation()
+          }}
+        >
           <div class="mb-4">
             <div class="pb-2">
               {this.post.tags.map((tag, tagK) => (
@@ -64,7 +72,7 @@ export const PostCard = tsx.component({
             <p class="break-words">{this.post.description}…</p>
           </div>
         </div>
-      </div>
+      </nuxt-link>
     )
   },
 })

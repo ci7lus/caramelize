@@ -30,13 +30,7 @@ export const PostCard = tsx.component({
             objectFit: "cover",
           }}
         />
-        <div
-          class="bg-gray-800 p-4 flex flex-col justify-between leading-normal rounded-b lg:rounded-b-none lg:rounded-r md:w-3/4"
-          onClick={(event: Event) => {
-            event.preventDefault()
-            event.stopPropagation()
-          }}
-        >
+        <div class="bg-gray-800 p-4 flex flex-col justify-between leading-normal rounded-b lg:rounded-b-none lg:rounded-r md:w-3/4">
           <div class="mb-4">
             <div class="pb-2">
               {this.post.tags.map((tag, tagK) => (

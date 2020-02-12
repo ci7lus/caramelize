@@ -15,8 +15,8 @@ export const getPageMeta = async (projectName: string, pageName: string) => {
   const url = process.server
     ? `https://scrapbox.io/api/pages/${projectName}/${encodeURIComponent(
         pageName
-      )}`
-    : `/api/${encodeURIComponent(pageName)}`
+      )}?followRename=true`
+    : `/api/${encodeURIComponent(pageName)}?followRename=true`
 
   const res = await fetch(url)
   if (res.status !== 200) {

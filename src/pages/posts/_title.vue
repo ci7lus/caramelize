@@ -10,7 +10,7 @@ import { Post } from "../../types/struct"
 
 export default Vue.extend({
   components: { ThePost },
-  async asyncData({ params, query, error }) {
+  async asyncData({ params, query, error, redirect }) {
     const routeParams = params || {}
     const { title } = routeParams
 
@@ -23,6 +23,10 @@ export default Vue.extend({
 
       if (post === null) {
         return error({ statusCode: 404 })
+      }
+
+      if (post.title !== title) {
+        return redirect(301, `/posts/${encodeURIComponent(post.title)}`)
       }
 
       return { post }

@@ -10,7 +10,15 @@ export const TheFooter = tsx.component({
       <div class="bg-gray-900">
         <div class="container mx-auto max-w-screen-md">
           <div class="flex justify-end text-xs p-4 text-gray-200">
-            {SITE_NAME} - Made with Caramelize and
+            {SITE_NAME} - Made with
+            <a
+              href="https://github.com/ci7lus/caramelize"
+              target="_blank"
+              class="px-1 text-blue-500"
+            >
+              Caramelize
+            </a>
+            and
             <span class="pl-1">
               <FeatherHeartIcon size={12} />
             </span>

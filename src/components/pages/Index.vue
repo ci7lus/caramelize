@@ -6,6 +6,7 @@
 import Vue, { VNode } from "vue"
 import { Post } from "~/types/struct"
 import { ThePostList } from "~/components/partials/index/ThePostList"
+import { SITE_ROOT } from "~/config"
 
 export default Vue.extend({
   props: {
@@ -27,6 +28,15 @@ export default Vue.extend({
                 hid: "og:description",
                 name: "og:description",
                 content: `最新の記事は "${this.posts[0].title}" です`,
+              },
+            ]
+          : [],
+      link:
+        typeof SITE_ROOT === "string"
+          ? [
+              {
+                rel: "canonical",
+                href: `https://${SITE_ROOT}`,
               },
             ]
           : [],

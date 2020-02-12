@@ -6,6 +6,7 @@
 import Vue, { VNode } from "vue"
 import { Post } from "~/types/struct"
 import { TheTaggedPostList } from "~/components/partials/tags/TheTaggedPostList"
+import { SITE_ROOT } from "~/config"
 
 export default Vue.extend({
   props: {
@@ -29,6 +30,17 @@ export default Vue.extend({
           content: `#${this.tag} がついた投稿の一覧です`,
         },
       ],
+      link:
+        typeof SITE_ROOT === "string"
+          ? [
+              {
+                rel: "canonical",
+                href: `https://${SITE_ROOT}/tags/${encodeURIComponent(
+                  this.tag
+                )}`,
+              },
+            ]
+          : [],
     }
   },
 })

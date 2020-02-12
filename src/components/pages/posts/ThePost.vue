@@ -6,6 +6,8 @@
 import Vue, { VNode } from "vue"
 import { Post } from "~/types/struct"
 import { ThePostDetail } from "~/components/partials/posts/ThePostDetail"
+import { SITE_ROOT } from "~/config"
+import { NuxtConfigurationHead } from "@nuxt/types/config/head"
 
 export default Vue.extend({
   props: {
@@ -16,7 +18,7 @@ export default Vue.extend({
   },
   components: { ThePostDetail },
   head() {
-    const meta = [
+    const meta: NuxtConfigurationHead["meta"] = [
       {
         hid: "og:title",
         name: "og:title",
@@ -40,9 +42,19 @@ export default Vue.extend({
         content: this.post.image,
       })
     }
+    const link: NuxtConfigurationHead["link"] = []
+    if (typeof SITE_ROOT === "string") {
+      link.push({
+        rel: "canonical",
+        href: `https://${SITE_ROOT}/posts/${encodeURIComponent(
+          this.post.title
+        )}`,
+      })
+    }
     return {
       title: this.post.title,
       meta,
+      link,
     }
   },
 })

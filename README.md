@@ -22,6 +22,10 @@ now にビルドする場合は secrets 経由で設定します。使わない�
 | SITE_ROOT        | サイトのメインホスト名を指定します            | いいえ |
 | GA               | Google Analytics のタグを設定します           | いいえ |
 
+## デプロイ
+
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/ci7lus/caramelize/tree/master)
+
 ## 開発
 
 1. このリポジトリをクローンする

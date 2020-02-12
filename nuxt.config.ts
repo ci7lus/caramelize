@@ -6,6 +6,7 @@ import {
   SCRAPBOX_TAG,
   GA,
   isProduction,
+  SITE_ROOT,
 } from "./src/config"
 
 const config: Configuration = {
@@ -85,8 +86,12 @@ const config: Configuration = {
     },
   },
   env: {
-    SCRAPBOX_PROJECT: SCRAPBOX_PROJECT,
-    SCRAPBOX_TAG: SCRAPBOX_TAG,
+    SCRAPBOX_PROJECT,
+    SCRAPBOX_TAG,
+    SITE_NAME,
+    TWITTER_ID: TWITTER_ID!,
+    SITE_ROOT: SITE_ROOT!,
+    GA: GA!,
   },
 }
 

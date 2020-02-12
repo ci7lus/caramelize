@@ -10,7 +10,7 @@
   "routes": [
     {
       "src": "/.*",
-      "headers": { "Cache-Control": "s-maxage=600, stale-while-revalidat" },
+      "headers": { "Cache-Control": "s-maxage=600, stale-while-revalidate" },
       "continue": true
     }
   ],

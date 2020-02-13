@@ -8,13 +8,9 @@ import {
   FeatherEditIcon,
   FeatherClockIcon,
 } from "~/components/commons/FeatherIcons"
-import VueHighlightJS from "vue-highlight.js"
-import "vue-highlight.js/lib/allLanguages"
-import "highlight.js/styles/tomorrow-night.css"
 import moment from "moment"
 import "moment-timezone"
-
-Vue.use(VueHighlightJS, {})
+import { languages } from "~/plugins/highlight"
 
 export const ThePostDetail = tsx.component({
   name: "ThePostDetail",
@@ -244,11 +240,17 @@ export const contentRender = (content: PageType, h: CreateElement) => {
           )
         }
       case "codeBlock":
+        const ext = line.fileName
+          .trim()
+          .split(".")
+          .pop()!
         return (
           <div>
             <code class="bg-gray-800 text-sm">{line.fileName}</code>
             <div class="text-sm">
-              <highlight-code auto={true}>{line.content}</highlight-code>
+              <highlight-code lang={languages[ext] && ext}>
+                {line.content}
+              </highlight-code>
             </div>
           </div>
         )

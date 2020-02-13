@@ -44,11 +44,11 @@ const config: Configuration = {
   /*
    ** Global CSS
    */
-  css: ["~/assets/css/global.css"],
+  css: ["~/assets/css/global.css", "~/assets/css/highlight.css"],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/lazyload.ts"],
+  plugins: ["~/plugins/lazyload.ts", "~/plugins/highlight.ts"],
   /*
    ** Nuxt.js modules
    */

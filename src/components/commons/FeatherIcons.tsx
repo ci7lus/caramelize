@@ -1,7 +1,8 @@
 import Vue, { VNode } from "vue"
 import * as tsx from "vue-tsx-support"
 
-const { HeartIcon, ClockIcon, EditIcon } = require("vue-feather-icons")
+// @ts-ignore
+import { HeartIcon, ClockIcon, EditIcon } from "vue-feather-icons"
 
 export const FeatherHeartIcon = tsx.component({
   name: "FeatherHeartIcon",

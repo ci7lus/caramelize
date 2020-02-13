@@ -138,11 +138,23 @@ export const lineNodeTypeRender = (
         </nuxt-link>
       )
     case "link":
-      return (
-        <a class="text-blue-500" key={key} href={node.href} target="_blank">
-          {node.content.length === 0 ? node.href : node.content}
-        </a>
-      )
+      if (node.href.startsWith("http")) {
+        return (
+          <a class="text-blue-500" key={key} href={node.href} target="_blank">
+            {node.content.length === 0 ? node.href : node.content}
+          </a>
+        )
+      } else {
+        return (
+          <nuxt-link
+            key={key}
+            to={`/posts/${encodeURIComponent(node.href)}`}
+            class="text-blue-500"
+          >
+            {node.href}
+          </nuxt-link>
+        )
+      }
     case "icon":
       if (node.path.includes("[")) {
         return <img class="icon" key={key} />

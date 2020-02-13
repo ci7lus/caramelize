@@ -8,8 +8,7 @@ import {
   FeatherEditIcon,
   FeatherClockIcon,
 } from "~/components/commons/FeatherIcons"
-import moment from "moment"
-import "moment-timezone"
+import dayjs from "dayjs"
 import { languages } from "~/plugins/highlight"
 
 export const ThePostDetail = tsx.component({
@@ -31,15 +30,11 @@ export const ThePostDetail = tsx.component({
           <span class="pr-2">
             <FeatherEditIcon />
           </span>
-          {moment(this.post.createdAt)
-            .tz("Asia/Tokyo")
-            .format(formatString)}
+          {dayjs(this.post.createdAt).format(formatString)}
           <span class="px-2">
             <FeatherClockIcon />
           </span>
-          {moment(this.post.updatedAt)
-            .tz("Asia/Tokyo")
-            .format(formatString)}
+          {dayjs(this.post.updatedAt).format(formatString)}
         </p>
         <div class="content leading-loose break-words">
           {contentRender(this.post.content!, h)}

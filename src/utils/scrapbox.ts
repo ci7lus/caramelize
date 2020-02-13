@@ -7,8 +7,7 @@ import {
 import { Post } from "~/types/struct"
 import { parse } from "@tosuke/scrapbox-parser"
 import querystring from "querystring"
-import moment from "moment"
-import "moment-timezone"
+import dayjs from "dayjs"
 import { SCRAPBOX_PROJECT, SCRAPBOX_TAG } from "~/config"
 
 export const getPageMeta = async (projectName: string, pageName: string) => {
@@ -52,12 +51,8 @@ export const getPost = async (slug: string) => {
     content: parsed,
     user: meta.user,
     tags,
-    createdAt: moment(meta.created * 1000)
-      .tz("Asia/Tokyo")
-      .format(),
-    updatedAt: moment(meta.updated * 1000)
-      .tz("Asia/Tokyo")
-      .format(),
+    createdAt: dayjs(meta.created * 1000).format(),
+    updatedAt: dayjs(meta.updated * 1000).format(),
   }
   return data
 }
@@ -129,12 +124,8 @@ export const getPosts = async (
         image: page.image,
         user: page.user,
         tags,
-        createdAt: moment(page.created * 1000)
-          .tz("Asia/Tokyo")
-          .format(),
-        updatedAt: moment(page.updated * 1000)
-          .tz("Asia/Tokyo")
-          .format(),
+        createdAt: dayjs(page.created * 1000).format(),
+        updatedAt: dayjs(page.updated * 1000).format(),
       }
       return p
     })

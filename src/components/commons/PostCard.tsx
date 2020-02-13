@@ -6,8 +6,7 @@ import {
   FeatherEditIcon,
 } from "~/components/commons/FeatherIcons"
 import { formatString } from "~/constants"
-import moment from "moment"
-import "moment-timezone"
+import dayjs from "dayjs"
 import { PostTag } from "./PostTag"
 import BackgroundImage from "~/components/commons/BackgroundImage.vue"
 
@@ -63,15 +62,11 @@ export const PostCard = tsx.component({
                   <span class="pr-2">
                     <FeatherEditIcon />
                   </span>
-                  {moment(this.post.createdAt)
-                    .tz("Asia/Tokyo")
-                    .format(formatString)}
+                  {dayjs(this.post.createdAt).format(formatString)}
                   <span class="px-2">
                     <FeatherClockIcon />
                   </span>
-                  {moment(this.post.updatedAt)
-                    .tz("Asia/Tokyo")
-                    .format(formatString)}
+                  {dayjs(this.post.updatedAt).format(formatString)}
                 </div>
                 <div class="break-words">{this.post.description}…</div>
               </div>

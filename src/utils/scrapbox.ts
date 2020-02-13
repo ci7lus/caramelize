@@ -8,7 +8,7 @@ import { Post } from "~/types/struct"
 import { parse } from "@tosuke/scrapbox-parser"
 import querystring from "querystring"
 import dayjs from "dayjs"
-import { SCRAPBOX_PROJECT, SCRAPBOX_TAG } from "~/config"
+import { SCRAPBOX_PROJECT, SCRAPBOX_TAG, SCRAPBOX_SORT } from "~/config"
 
 export const getPageMeta = async (projectName: string, pageName: string) => {
   const url = process.server
@@ -60,7 +60,7 @@ export const getPost = async (slug: string) => {
 export const getPostsMaster = async (
   skip: number,
   limit: number,
-  sort: "updated",
+  sort: string,
   q: string
 ) => {
   const qs = querystring.stringify({
@@ -91,7 +91,7 @@ export const getPosts = async (
   if (100 < page * limit) {
     return []
   }
-  const body = await getPostsMaster(0, 100, "updated", query)
+  const body = await getPostsMaster(0, 100, SCRAPBOX_SORT, query)
 
   if (body.count < page * limit) {
     return []

@@ -18,6 +18,7 @@
     "env": {
       "SCRAPBOX_PROJECT": "@caramelize-scrapbox-project",
       "SCRAPBOX_TAG": "@caramelize-scrapbox-tag",
+      "SCRAPBOX_SORT": "@caramelize-scrapbox-sort",
       "TWITTER_ID": "@caramelize-twitter-id",
       "SITE_NAME": "@caramelize-site-name",
       "SITE_ROOT": "@caramelize-site-root",
@@ -27,6 +28,7 @@
   "env": {
     "SCRAPBOX_PROJECT": "@caramelize-scrapbox-project",
     "SCRAPBOX_TAG": "@caramelize-scrapbox-tag",
+    "SCRAPBOX_SORT": "@caramelize-scrapbox-sort",
     "TWITTER_ID": "@caramelize-twitter-id",
     "SITE_NAME": "@caramelize-site-name",
     "SITE_ROOT": "@caramelize-site-root",

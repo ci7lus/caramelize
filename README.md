@@ -13,14 +13,15 @@ Scrapbox \[なのに\] Blog
 
 now にビルドする場合は secrets 経由で設定します。使わない値は `null` にしてください。
 
-| キー             | 意味                                          | 必須　 | デフォルト値 |
-| ---------------- | --------------------------------------------- | ------ | ------------ |
-| SCRAPBOX_PROJECT | Scrapbox の Project を指定します              | はい   |
-| SCRAPBOX_TAG     | 集めるタグを指定します（#を含める）           | はい   |
-| TWITTER_ID       | Twitter の ScreenName （@ 抜き） を指定します | いいえ |
-| SITE_NAME        | サイト名を指定します                          | いいえ | Caramelize   |
-| SITE_ROOT        | サイトのメインホスト名を指定します            | いいえ |
-| GA               | Google Analytics のタグを設定します           | いいえ |
+| キー             | 意味                                                                     | 必須　 | デフォルト値 |
+| ---------------- | ------------------------------------------------------------------------ | ------ | ------------ |
+| SCRAPBOX_PROJECT | Scrapbox の Project を指定します                                         | はい   |
+| SCRAPBOX_TAG     | 集めるタグを指定します（#を含める）                                      | はい   |
+| SCRAPBOX_SORT    | ソート順を指定します（updated・created・accessed・linked・views・title） | いいえ | 　 created   |
+| TWITTER_ID       | Twitter の ScreenName （@ 抜き） を指定します                            | いいえ |
+| SITE_NAME        | サイト名を指定します                                                     | いいえ | Caramelize   |
+| SITE_ROOT        | サイトのメインホスト名を指定します                                       | いいえ |
+| GA               | Google Analytics のタグを設定します                                      | いいえ |
 
 ## デプロイ
 

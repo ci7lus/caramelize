@@ -7,6 +7,11 @@ export const SCRAPBOX_PROJECT = $.string.transformOrThrow(
 )
 export const SCRAPBOX_TAG = $.string.transformOrThrow(process.env.SCRAPBOX_TAG)
 
+export const SCRAPBOX_SORT =
+  !!process.env.SCRAPBOX_SORT && process.env.SCRAPBOX_SORT !== "null"
+    ? $.string.transformOrThrow(process.env.SCRAPBOX_SORT)
+    : "created"
+
 export const TWITTER_ID =
   !!process.env.TWITTER_ID && process.env.TWITTER_ID !== "null"
     ? $.string.transformOrThrow(process.env.TWITTER_ID)

@@ -12,7 +12,7 @@ export const TheTaggedPostList = tsx.component({
       required: true,
     },
     posts: {
-      type: Array as () => Omit<Post, "content">[],
+      type: Array as () => Post[],
       required: true,
     },
     tag: {

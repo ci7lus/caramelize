@@ -47,7 +47,7 @@ export type ScrapboxPage = {
       linksLc: string[]
       updated: number
       accessed: number
-    }
+    }[]
   }
 }
 

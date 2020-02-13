@@ -12,7 +12,7 @@ export default Vue.extend({
   props: {
     tag: String,
     page: Number,
-    posts: Array as () => Omit<Post, "content">[],
+    posts: Array as () => Post[],
   },
   components: { TheTaggedPostList },
   head() {

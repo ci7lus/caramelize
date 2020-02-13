@@ -13,7 +13,7 @@ import { SITE_ROOT } from "~/config"
 export default Vue.extend({
   props: {
     page: Number,
-    posts: Array as () => Omit<Post, "content">[],
+    posts: Array as () => Post[],
   },
   components: { ThePostList },
   head() {

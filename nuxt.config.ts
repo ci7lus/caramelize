@@ -68,7 +68,23 @@ const config: Configuration = {
   },
   buildModules: ["@nuxtjs/tailwindcss", "@nuxt/typescript-build"],
   purgeCSS: {
-    enabled: false,
+    enabled: true,
+    mode: "postcss",
+    paths: [
+      "components/**/*.vue",
+      "components/**/*.tsx",
+      "layouts/**/*.vue",
+      "pages/**/*.vue",
+      "plugins/**/*.ts",
+    ],
+    whitelist: ["body", "html", "nuxt-progress"],
+    whitelistPatterns: [/hljs.*$/],
+    extractors: [
+      {
+        extractor: (content: string) => content.match(/[A-z0-9-:\\/]+/g) || [],
+        extensions: ["vue", "js", "tsx", "ts"],
+      },
+    ],
   },
   srcDir: "./src",
   proxy: {

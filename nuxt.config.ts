@@ -78,7 +78,7 @@ const config: Configuration = {
       "plugins/**/*.ts",
     ],
     whitelist: ["body", "html", "nuxt-progress"],
-    whitelistPatterns: [/hljs.*$/],
+    whitelistPatterns: [/hljs.*$/, /pl-.+/],
     extractors: [
       {
         extractor: (content: string) => content.match(/[A-z0-9-:\\/]+/g) || [],

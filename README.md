@@ -22,6 +22,7 @@ now にビルドする場合は secrets 経由で設定します。使わない�
 | SITE_NAME        | サイト名を指定します                                                     | いいえ | Caramelize   |
 | SITE_ROOT        | サイトのメインホスト名を指定します                                       | いいえ |
 | GA               | Google Analytics のタグを設定します                                      | いいえ |
+| GSV              | Search Console のタグを設定します                                        | いいえ |
 
 ## デプロイ
 

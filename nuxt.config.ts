@@ -7,6 +7,7 @@ import {
   GA,
   isProduction,
   SITE_ROOT,
+  GSV,
 } from "./src/config"
 
 const config: Configuration = {
@@ -103,6 +104,14 @@ const config: Configuration = {
     SITE_ROOT: SITE_ROOT!,
     GA: GA!,
   },
+}
+
+if (GSV && isProduction) {
+  config.head!.meta!.push({
+    hid: "google-site-verification",
+    name: "google-site-verification",
+    content: GSV,
+  })
 }
 
 if (GA && isProduction) {

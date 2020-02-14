@@ -22,7 +22,8 @@
       "TWITTER_ID": "@caramelize-twitter-id",
       "SITE_NAME": "@caramelize-site-name",
       "SITE_ROOT": "@caramelize-site-root",
-      "GA": "@caramelize-ga"
+      "GA": "@caramelize-ga",
+      "GSV": "@caramelize-gsv"
     }
   },
   "env": {
@@ -32,6 +33,7 @@
     "TWITTER_ID": "@caramelize-twitter-id",
     "SITE_NAME": "@caramelize-site-name",
     "SITE_ROOT": "@caramelize-site-root",
-    "GA": "@caramelize-ga"
+    "GA": "@caramelize-ga",
+    "GSV": "@caramelize-gsv"
   }
 }

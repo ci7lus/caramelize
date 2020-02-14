@@ -31,3 +31,8 @@ export const GA =
   !!process.env.GA && process.env.GA !== "null"
     ? $.string.transformOrThrow(process.env.GA)
     : null
+
+export const GSV =
+  !!process.env.GSV && process.env.GSV !== "null"
+    ? $.string.transformOrThrow(process.env.GSV)
+    : null

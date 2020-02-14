@@ -57,6 +57,7 @@ export const languages: { [k: string]: any } = {
   hs: haskell,
   java: java,
   js: javascript,
+  jsx: javascript,
   json: json,
   kt: kotlin,
   less: less,
@@ -77,6 +78,7 @@ export const languages: { [k: string]: any } = {
   swift: swift,
   tex: tex,
   ts: typescript,
+  tsx: javascript,
   yml: yaml,
   xml: xml,
 }

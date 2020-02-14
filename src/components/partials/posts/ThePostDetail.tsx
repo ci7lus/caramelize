@@ -252,13 +252,11 @@ export const contentRender = (content: PageType, h: CreateElement) => {
           .split(".")
           .pop()!
         return (
-          <div>
-            <code class="bg-gray-800 text-sm">{line.fileName}</code>
-            <div class="text-sm">
-              <highlight-code lang={languages[ext] && ext}>
-                {line.content}
-              </highlight-code>
-            </div>
+          <div class="text-sm leading-relaxed py-2">
+            <code class="bg-gray-800">{line.fileName}</code>
+            <highlight-code lang={languages[ext] && ext}>
+              <pre>{line.content}</pre>
+            </highlight-code>
           </div>
         )
       default:

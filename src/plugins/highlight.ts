@@ -1,4 +1,7 @@
 import Vue from "vue"
+import { Plugin } from "@nuxt/types"
+
+import highlightJS from "highlight.js"
 import VueHighlightJS from "vue-highlight.js"
 
 const bash = require("highlight.js/lib/languages/bash")
@@ -38,6 +41,8 @@ const swift = require("highlight.js/lib/languages/swift")
 const tex = require("highlight.js/lib/languages/tex")
 const typescript = require("highlight.js/lib/languages/typescript")
 const yaml = require("highlight.js/lib/languages/yaml")
+// @ts-ignore
+import { definer as vue } from "highlightjs-vue/dist/highlightjs-vue.esm"
 const xml = require("highlight.js/lib/languages/xml")
 
 export const languages: { [k: string]: any } = {
@@ -80,12 +85,12 @@ export const languages: { [k: string]: any } = {
   ts: typescript,
   tsx: javascript,
   yml: yaml,
+  vue: vue,
   xml: xml,
 }
 
-import { Plugin } from "@nuxt/types"
-
 const RegisterPlugin: Plugin = () => {
+  highlightJS.registerLanguage("vue", vue)
   Vue.use(VueHighlightJS, {
     languages,
   })

@@ -18,6 +18,7 @@
     "@tosuke/scrapbox-parser": "^4.0.0-0",
     "dayjs": "^1.8.20",
     "highlight.js": "^9.18.1",
+    "highlightjs-vue": "^1.0.0",
     "node-fetch": "^2.6.0",
     "nuxt": "^2.11.0",
     "transform-ts": "^0.3.0",

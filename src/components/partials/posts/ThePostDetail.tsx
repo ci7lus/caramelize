@@ -62,9 +62,9 @@ export const ThePostDetail = tsx.component({
           </p>
         </div>
         <div class="flex items-center justify-center flex-col md:flex-row">
-          <div class="flex items-center justify-center p-4 text-center text-sm">
+          <div class="flex items-center justify-center p-2 text-center text-sm">
             <button
-              class="bg-twitter text-white font-bold py-2 px-4 rounded-full m-2 text-sm"
+              class="bg-twitter text-white font-bold py-2 px-3 rounded-md m-2 text-sm"
               onClick={(e: any) => {
                 window.open(
                   `https://twitter.com/intent/tweet?url=${encodeURIComponent(
@@ -74,7 +74,7 @@ export const ThePostDetail = tsx.component({
                   )}&text=${encodeURIComponent(
                     `${this.post.title} | ${SITE_NAME}`
                   )}${TWITTER_ID ? `&via=${TWITTER_ID}` : ""}`,
-                  "twitter_share",
+                  "github_share",
                   "width=600, height=500, menubar=no, toolbar=no, scrollbars=yes"
                 )
               }}
@@ -100,8 +100,8 @@ export const ThePostDetail = tsx.component({
               <div class="pl-2">
                 <a href={`https://twitter.com/${TWITTER_ID}`} target="_blank">
                   <button>
-                    <div class="w-6 h-6 flex items-center justify-center leading-none rounded-full bg-twitter">
-                      <FeatherTwitterIcon size={12} />
+                    <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800">
+                      <FeatherTwitterIcon size={14} />
                     </div>
                   </button>
                 </a>
@@ -111,8 +111,8 @@ export const ThePostDetail = tsx.component({
               <div class="pl-2">
                 <a href={`https://github.com/${GITHUB_ID}`} target="_blank">
                   <button>
-                    <div class="w-6 h-6 flex items-center justify-center leading-none rounded-full bg-github">
-                      <FeatherGithubIcon size={12} />
+                    <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800">
+                      <FeatherGithubIcon size={14} />
                     </div>
                   </button>
                 </a>

@@ -19,6 +19,7 @@ now にビルドする場合は secrets 経由で設定します。使わない�
 | SCRAPBOX_TAG     | 集めるタグを指定します（#を含める）                                      | はい   |
 | SCRAPBOX_SORT    | ソート順を指定します（updated・created・accessed・linked・views・title） | いいえ | 　 created   |
 | TWITTER_ID       | Twitter の ScreenName （@ 抜き） を指定します                            | いいえ |
+| GITHUB_ID        | GitHub の ScreenName を指定します                                        | いいえ |
 | SITE_NAME        | サイト名を指定します                                                     | いいえ | Caramelize   |
 | SITE_ROOT        | サイトのメインホスト名を指定します                                       | いいえ |
 | GA               | Google Analytics のタグを設定します                                      | いいえ |

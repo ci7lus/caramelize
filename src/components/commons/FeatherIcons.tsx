@@ -9,6 +9,7 @@ import {
   BookmarkIcon,
   LinkIcon,
   PenToolIcon,
+  GithubIcon,
   // @ts-ignore
 } from "vue-feather-icons"
 
@@ -65,6 +66,20 @@ export const FeatherTwitterIcon = tsx.component({
   },
   render(): VNode {
     return <TwitterIcon class="inline" size={this.size.toString()} />
+  },
+})
+
+export const FeatherGithubIcon = tsx.component({
+  name: "FeatherGithubIcon",
+  props: {
+    size: {
+      type: Number,
+      required: false,
+      default: 16,
+    },
+  },
+  render(): VNode {
+    return <GithubIcon class="inline" size={this.size.toString()} />
   },
 })
 

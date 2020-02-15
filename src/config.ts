@@ -17,6 +17,11 @@ export const TWITTER_ID =
     ? $.string.transformOrThrow(process.env.TWITTER_ID)
     : null
 
+export const GITHUB_ID =
+  !!process.env.GITHUB_ID && process.env.GITHUB_ID !== "null"
+    ? $.string.transformOrThrow(process.env.GITHUB_ID)
+    : null
+
 export const SITE_NAME =
   !!process.env.SITE_NAME && process.env.SITE_NAME !== "null"
     ? $.string.transformOrThrow(process.env.SITE_NAME)

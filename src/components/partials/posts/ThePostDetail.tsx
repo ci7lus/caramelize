@@ -3,18 +3,22 @@ import * as tsx from "vue-tsx-support"
 import { Post } from "~/types/struct"
 import { formatString } from "~/constants"
 import { PageType, LineNodeType } from "@tosuke/scrapbox-parser"
-import { SCRAPBOX_PROJECT, TWITTER_ID, SITE_NAME, SITE_ROOT } from "~/config"
+import {
+  SCRAPBOX_PROJECT,
+  TWITTER_ID,
+  SITE_NAME,
+  GITHUB_ID,
+  SITE_ROOT,
+} from "~/config"
 import {
   FeatherEditIcon,
   FeatherClockIcon,
   FeatherTwitterIcon,
-  FeatherBookmarkIcon,
-  FeatherLinkIcon,
   FeatherPenToolIcon,
+  FeatherGithubIcon,
 } from "~/components/commons/FeatherIcons"
 import dayjs from "dayjs"
 import { languages } from "~/plugins/highlight"
-import { PostCard } from "~/components/commons/PostCard"
 
 export const ThePostDetail = tsx.component({
   name: "ThePostDetail",
@@ -98,6 +102,17 @@ export const ThePostDetail = tsx.component({
                   <button>
                     <div class="w-6 h-6 flex items-center justify-center leading-none rounded-full bg-twitter">
                       <FeatherTwitterIcon size={12} />
+                    </div>
+                  </button>
+                </a>
+              </div>
+            )}
+            {GITHUB_ID && (
+              <div class="pl-2">
+                <a href={`https://github.com/${GITHUB_ID}`} target="_blank">
+                  <button>
+                    <div class="w-6 h-6 flex items-center justify-center leading-none rounded-full bg-github">
+                      <FeatherGithubIcon size={12} />
                     </div>
                   </button>
                 </a>

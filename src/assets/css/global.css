@@ -35,3 +35,11 @@ ul {
 .text-twitter {
   color: #55acee;
 }
+
+.bg-github {
+  background-color: #24292e;
+}
+
+.text-github {
+  color: #24292e;
+}

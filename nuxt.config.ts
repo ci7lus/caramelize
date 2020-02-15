@@ -8,6 +8,7 @@ import {
   isProduction,
   SITE_ROOT,
   GSV,
+  GITHUB_ID,
 } from "./src/config"
 
 const config: Configuration = {
@@ -101,6 +102,7 @@ const config: Configuration = {
     SCRAPBOX_TAG,
     SITE_NAME,
     TWITTER_ID: TWITTER_ID!,
+    GITHUB_ID: GITHUB_ID!,
     SITE_ROOT: SITE_ROOT!,
     GA: GA!,
   },

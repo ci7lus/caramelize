@@ -1,8 +1,14 @@
 import Vue, { VNode } from "vue"
 import * as tsx from "vue-tsx-support"
 
-// @ts-ignore
-import { HeartIcon, ClockIcon, EditIcon } from "vue-feather-icons"
+import {
+  HeartIcon,
+  ClockIcon,
+  EditIcon,
+  TwitterIcon,
+  BookmarkIcon,
+  // @ts-ignore
+} from "vue-feather-icons"
 
 export const FeatherHeartIcon = tsx.component({
   name: "FeatherHeartIcon",
@@ -43,5 +49,33 @@ export const FeatherEditIcon = tsx.component({
   },
   render(): VNode {
     return <EditIcon class="inline" size={this.size.toString()} />
+  },
+})
+
+export const FeatherTwitterIcon = tsx.component({
+  name: "FeatherTwitterIcon",
+  props: {
+    size: {
+      type: Number,
+      required: false,
+      default: 16,
+    },
+  },
+  render(): VNode {
+    return <TwitterIcon class="inline" size={this.size.toString()} />
+  },
+})
+
+export const FeatherBookmarkIcon = tsx.component({
+  name: "FeatherBookmarkIcon",
+  props: {
+    size: {
+      type: Number,
+      required: false,
+      default: 16,
+    },
+  },
+  render(): VNode {
+    return <BookmarkIcon class="inline" size={this.size.toString()} />
   },
 })

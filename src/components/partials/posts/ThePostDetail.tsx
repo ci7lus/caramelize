@@ -3,10 +3,12 @@ import * as tsx from "vue-tsx-support"
 import { Post } from "~/types/struct"
 import { formatString } from "~/constants"
 import { PageType, LineNodeType } from "@tosuke/scrapbox-parser"
-import { SCRAPBOX_PROJECT } from "~/config"
+import { SCRAPBOX_PROJECT, TWITTER_ID, SITE_NAME, SITE_ROOT } from "~/config"
 import {
   FeatherEditIcon,
   FeatherClockIcon,
+  FeatherTwitterIcon,
+  FeatherBookmarkIcon,
 } from "~/components/commons/FeatherIcons"
 import dayjs from "dayjs"
 import { languages } from "~/plugins/highlight"
@@ -39,18 +41,40 @@ export const ThePostDetail = tsx.component({
         <div class="content leading-loose break-words">
           {contentRender(this.post.content!, h)}
         </div>
-        <div class="flex items-center justify-center py-4">
-          <p class="mr-4">Author:</p>
-          <img
-            class="w-10 h-10 mr-4 bg-gray-600 rounded"
-            v-lazy={this.post.user.photo}
-          />
-          <div class="text-sm">
-            <p class="leading-none">{this.post.user.displayName}</p>
-            <p class="text-xs">@{this.post.user.name}</p>
+        <div class="flex items-center justify-center flex-col-reverse md:flex-row">
+          <div class="flex items-center justify-center p-4 m-2">
+            <p class="mr-4">Author:</p>
+            <img
+              class="w-10 h-10 mr-4 bg-gray-600 rounded"
+              v-lazy={this.post.user.photo}
+            />
+            <div class="text-sm">
+              <p class="leading-none">{this.post.user.displayName}</p>
+              <p class="text-xs">@{this.post.user.name}</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center p-4 text-center text-sm">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2"
+              onClick={(e: any) => {
+                window.open(
+                  `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                    SITE_ROOT
+                      ? `https://${SITE_ROOT}${window.location.pathname}`
+                      : window.location.href
+                  )}&text=${encodeURIComponent(
+                    `${this.post.title} | ${SITE_NAME}`
+                  )}${TWITTER_ID ? `&via=${TWITTER_ID}` : ""}`,
+                  "twitter_share",
+                  "width=600, height=500, menubar=no, toolbar=no, scrollbars=yes"
+                )
+              }}
+            >
+              <FeatherTwitterIcon />
+            </button>
           </div>
         </div>
-        <div class="bg-gray-800 p-1" />
+        <div class="bg-gray-800 p-1 max-w-xl mx-auto" />
         <div class="flex items-center justify-center p-4 text-center text-sm">
           <p>
             Generated from

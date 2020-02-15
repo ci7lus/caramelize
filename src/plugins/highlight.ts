@@ -1,7 +1,8 @@
 import Vue from "vue"
 import { Plugin } from "@nuxt/types"
 
-import highlightJS from "highlight.js"
+// @ts-ignore
+import hljs from "highlight.js/lib/highlight"
 import VueHighlightJS from "vue-highlight.js"
 
 const bash = require("highlight.js/lib/languages/bash")
@@ -47,6 +48,7 @@ const xml = require("highlight.js/lib/languages/xml")
 
 export const languages: { [k: string]: any } = {
   sh: bash,
+  bash: bash,
   coffee: coffeescript,
   cpp: cpp,
   cs: cs,
@@ -55,33 +57,42 @@ export const languages: { [k: string]: any } = {
   d: d,
   dockerfile: dockerfile,
   el: elixir,
+  elixir: elixir,
   elm: elm,
   er: erlang,
+  erlang: erlang,
   glsl: glsl,
   go: go,
   hs: haskell,
   java: java,
   js: javascript,
+  javascript: javascript,
   jsx: javascript,
   json: json,
   kt: kotlin,
+  kotlin: kotlin,
   less: less,
   lua: lua,
   md: markdown,
+  markdown: markdown,
   m: matlab,
+  matlab: matlab,
   perl: perl,
   php: php,
-  ps: powershell,
+  powershell: powershell,
   python: python,
   r: r,
   rb: ruby,
+  ruby: ruby,
   rs: rust,
+  rust: rust,
   scala: scala,
   scss: scss,
   sql: sql,
   stylus: stylus,
   swift: swift,
   tex: tex,
+  typescript: typescript,
   ts: typescript,
   tsx: javascript,
   yml: yaml,
@@ -90,7 +101,10 @@ export const languages: { [k: string]: any } = {
 }
 
 const RegisterPlugin: Plugin = () => {
-  highlightJS.registerLanguage("vue", vue)
+  Object.entries(languages).map(([language, parser]) => {
+    hljs.registerLanguage(language, parser)
+  })
+
   Vue.use(VueHighlightJS, {
     languages,
   })

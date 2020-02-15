@@ -90,7 +90,8 @@ export const ThePostDetail = tsx.component({
             </div>
             <img
               class="w-10 h-10 mr-2 bg-gray-600 rounded"
-              v-lazy={this.post.user.photo}
+              src={this.post.user.photo}
+              loading="lazy"
             />
             <div class="text-sm">
               <p class="leading-none">{this.post.user.displayName}</p>
@@ -213,16 +214,17 @@ export const lineNodeTypeRender = (
       }
     case "icon":
       if (node.path.includes("[")) {
-        return <img class="icon" key={key} />
+        return <img class="w-6 inline" key={key} />
       }
       switch (node.pathType) {
         case "relative":
           return (
             <img
               class="w-6 inline"
-              v-lazy={`https://scrapbox.io/api/pages/${SCRAPBOX_PROJECT}/${encodeURIComponent(
+              src={`https://scrapbox.io/api/pages/${SCRAPBOX_PROJECT}/${encodeURIComponent(
                 node.path
               )}/icon`}
+              loading="lazy"
               key={key}
             />
           )
@@ -230,7 +232,8 @@ export const lineNodeTypeRender = (
           return (
             <img
               class="w-6 inline"
-              v-lazy={`https://scrapbox.io/api/pages${node.path}/icon`}
+              src={`https://scrapbox.io/api/pages${node.path}/icon`}
+              loading="lazy"
               key={key}
             />
           )
@@ -244,7 +247,7 @@ export const lineNodeTypeRender = (
     case "image":
       return (
         <div key={key}>
-          <img v-lazy={node.src}></img>
+          <img src={node.src} loading="lazy" />
         </div>
       )
     case "plain":

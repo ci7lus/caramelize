@@ -16,7 +16,13 @@ export const TheHeader = tsx.component({
             <nuxt-link to="/" tag="a">
               <div class="flex items-center justify-start mx-4 my-3">
                 {SITE_NAME === "Caramelize" ? (
-                  <img alt="Caramelize" src="/logo.svg" width="100" />
+                  <img
+                    alt="Caramelize"
+                    src="/logo.svg"
+                    loading="auto"
+                    width="100"
+                    height="30"
+                  />
                 ) : (
                   <h1
                     class="font-bold text-lg"

@@ -9,9 +9,12 @@ import {
   FeatherClockIcon,
   FeatherTwitterIcon,
   FeatherBookmarkIcon,
+  FeatherLinkIcon,
+  FeatherPenToolIcon,
 } from "~/components/commons/FeatherIcons"
 import dayjs from "dayjs"
 import { languages } from "~/plugins/highlight"
+import { PostCard } from "~/components/commons/PostCard"
 
 export const ThePostDetail = tsx.component({
   name: "ThePostDetail",
@@ -41,21 +44,23 @@ export const ThePostDetail = tsx.component({
         <div class="content leading-loose break-words">
           {contentRender(this.post.content!, h)}
         </div>
-        <div class="flex items-center justify-center flex-col-reverse md:flex-row">
-          <div class="flex items-center justify-center p-4 m-2">
-            <p class="mr-4">Author:</p>
-            <img
-              class="w-10 h-10 mr-4 bg-gray-600 rounded"
-              v-lazy={this.post.user.photo}
-            />
-            <div class="text-sm">
-              <p class="leading-none">{this.post.user.displayName}</p>
-              <p class="text-xs">@{this.post.user.name}</p>
-            </div>
-          </div>
+        <div class="flex items-center justify-center p-2 text-center text-sm">
+          <p>
+            Generated from
+            <br />
+            <a
+              class="text-blue-500"
+              href={`https://scrapbox.io/${SCRAPBOX_PROJECT}/${this.post.title}`}
+              target="_blank"
+            >
+              {this.post.title}
+            </a>
+          </p>
+        </div>
+        <div class="flex items-center justify-center flex-col md:flex-row">
           <div class="flex items-center justify-center p-4 text-center text-sm">
             <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2"
+              class="bg-twitter text-white font-bold py-2 px-4 rounded-full m-2 text-sm"
               onClick={(e: any) => {
                 window.open(
                   `https://twitter.com/intent/tweet?url=${encodeURIComponent(
@@ -71,22 +76,34 @@ export const ThePostDetail = tsx.component({
               }}
             >
               <FeatherTwitterIcon />
+              &nbsp;Tweet
             </button>
           </div>
-        </div>
-        <div class="bg-gray-800 p-1 max-w-xl mx-auto" />
-        <div class="flex items-center justify-center p-4 text-center text-sm">
-          <p>
-            Generated from
-            <br />
-            <a
-              class="text-blue-500"
-              href={`https://scrapbox.io/${SCRAPBOX_PROJECT}/${this.post.title}`}
-              target="_blank"
-            >
-              {this.post.title}
-            </a>
-          </p>
+          <div class="hidden md:block py-6 px-1 bg-gray-800" />
+          <div class="flex items-center justify-center p-4 m-2">
+            <div class="pr-4">
+              <FeatherPenToolIcon />
+            </div>
+            <img
+              class="w-10 h-10 mr-2 bg-gray-600 rounded"
+              v-lazy={this.post.user.photo}
+            />
+            <div class="text-sm">
+              <p class="leading-none">{this.post.user.displayName}</p>
+              <p class="text-xs">@{this.post.user.name}</p>
+            </div>
+            {TWITTER_ID && (
+              <div class="pl-2">
+                <a href={`https://twitter.com/${TWITTER_ID}`} target="_blank">
+                  <button>
+                    <div class="w-6 h-6 flex items-center justify-center leading-none rounded-full bg-twitter">
+                      <FeatherTwitterIcon size={12} />
+                    </div>
+                  </button>
+                </a>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     )
@@ -259,11 +276,7 @@ export const contentRender = (content: PageType, h: CreateElement) => {
           )
         } else {
           return (
-            <ul
-              class={`pl-${line.indent * 4}`}
-              key={`line-${l}`}
-              style={{ listStyleType: "circle" }}
-            >
+            <ul class={`pl-${line.indent * 4}`} key={`line-${l}`}>
               <li>
                 {line.nodes.map((node, k) => lineNodeTypeRender(node, k, h))}
               </li>

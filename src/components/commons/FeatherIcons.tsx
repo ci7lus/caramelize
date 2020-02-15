@@ -7,6 +7,8 @@ import {
   EditIcon,
   TwitterIcon,
   BookmarkIcon,
+  LinkIcon,
+  PenToolIcon,
   // @ts-ignore
 } from "vue-feather-icons"
 
@@ -77,5 +79,33 @@ export const FeatherBookmarkIcon = tsx.component({
   },
   render(): VNode {
     return <BookmarkIcon class="inline" size={this.size.toString()} />
+  },
+})
+
+export const FeatherLinkIcon = tsx.component({
+  name: "FeatherLinkIcon",
+  props: {
+    size: {
+      type: Number,
+      required: false,
+      default: 16,
+    },
+  },
+  render(): VNode {
+    return <LinkIcon class="inline" size={this.size.toString()} />
+  },
+})
+
+export const FeatherPenToolIcon = tsx.component({
+  name: "FeatherPenToolIcon",
+  props: {
+    size: {
+      type: Number,
+      required: false,
+      default: 16,
+    },
+  },
+  render(): VNode {
+    return <PenToolIcon class="inline" size={this.size.toString()} />
   },
 })

@@ -23,3 +23,15 @@ img[lazy="loaded"] {
 .has-background[lazy="loaded"] {
   background-color: rgba(74, 85, 104, 0);
 }
+
+ul {
+  list-style-type: circle;
+}
+
+.bg-twitter {
+  background-color: #55acee;
+}
+
+.text-twitter {
+  color: #55acee;
+}

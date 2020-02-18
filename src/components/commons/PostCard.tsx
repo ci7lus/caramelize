@@ -9,7 +9,6 @@ import { formatString } from "~/constants"
 import dayjs from "dayjs"
 import utc from "dayjs/plugin/utc"
 import { PostTag } from "./PostTag"
-import BackgroundImage from "~/components/commons/BackgroundImage.vue"
 
 dayjs.extend(utc)
 
@@ -23,7 +22,6 @@ export const PostCard = tsx.component({
   },
   components: {
     PostTag,
-    BackgroundImage,
   },
   methods: {
     handleClickTag(tag: string) {
@@ -40,9 +38,9 @@ export const PostCard = tsx.component({
         >
           <div class="md:max-w-full md:flex items-stretch py-4 block">
             {this.post.image ? (
-              <BackgroundImage
+              <div
                 class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center"
-                img={this.post.image}
+                style={{ backgroundImage: `url("${this.post.image}")` }}
               />
             ) : (
               <div class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center" />

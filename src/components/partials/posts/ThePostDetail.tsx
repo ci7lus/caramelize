@@ -18,7 +18,10 @@ import {
   FeatherGithubIcon,
 } from "~/components/commons/FeatherIcons"
 import dayjs from "dayjs"
+import utc from "dayjs/plugin/utc"
 import { languages } from "~/plugins/highlight"
+
+dayjs.extend(utc)
 
 export const ThePostDetail = tsx.component({
   name: "ThePostDetail",
@@ -39,11 +42,17 @@ export const ThePostDetail = tsx.component({
           <span class="pr-2">
             <FeatherEditIcon />
           </span>
-          {dayjs(this.post.createdAt).format(formatString)}
+          {dayjs(this.post.createdAt)
+            .utc()
+            .add(9, "hour")
+            .format(formatString)}
           <span class="px-2">
             <FeatherClockIcon />
           </span>
-          {dayjs(this.post.updatedAt).format(formatString)}
+          {dayjs(this.post.updatedAt)
+            .utc()
+            .add(9, "hour")
+            .format(formatString)}
         </p>
         <div class="content leading-loose break-words">
           {contentRender(this.post.content!, h)}

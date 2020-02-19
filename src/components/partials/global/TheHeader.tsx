@@ -37,7 +37,11 @@ export const TheHeader = tsx.component({
           <div class="flex items-center justify-end">
             <div class="mx-4">
               {TWITTER_ID && (
-                <a href={`https://twitter.com/${TWITTER_ID}`} target="_blank">
+                <a
+                  href={`https://twitter.com/${TWITTER_ID}`}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <button class="ml-2">
                     <div class="flex items-center justify-center rounded-md p-2 bg-gray-800">
                       <FeatherTwitterIcon size={14} />
@@ -46,7 +50,11 @@ export const TheHeader = tsx.component({
                 </a>
               )}
               {GITHUB_ID && (
-                <a href={`https://github.com/${GITHUB_ID}`} target="_blank">
+                <a
+                  href={`https://github.com/${GITHUB_ID}`}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <button class="ml-2">
                     <div class="flex items-center justify-center rounded-md p-2 bg-gray-800">
                       <FeatherGithubIcon size={14} />

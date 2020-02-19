@@ -65,6 +65,7 @@ export const ThePostDetail = tsx.component({
               class="text-blue-500"
               href={`https://scrapbox.io/${SCRAPBOX_PROJECT}/${this.post.title}`}
               target="_blank"
+              rel="noopener"
             >
               {this.post.title}
             </a>
@@ -108,7 +109,11 @@ export const ThePostDetail = tsx.component({
             </div>
             {TWITTER_ID && (
               <div class="pl-2">
-                <a href={`https://twitter.com/${TWITTER_ID}`} target="_blank">
+                <a
+                  href={`https://twitter.com/${TWITTER_ID}`}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <button>
                     <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800">
                       <FeatherTwitterIcon size={14} />
@@ -119,7 +124,11 @@ export const ThePostDetail = tsx.component({
             )}
             {GITHUB_ID && (
               <div class="pl-2">
-                <a href={`https://github.com/${GITHUB_ID}`} target="_blank">
+                <a
+                  href={`https://github.com/${GITHUB_ID}`}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <button>
                     <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800">
                       <FeatherGithubIcon size={14} />
@@ -206,7 +215,13 @@ export const lineNodeTypeRender = (
     case "link":
       if (node.href.startsWith("http")) {
         return (
-          <a class="text-blue-500" key={key} href={node.href} target="_blank">
+          <a
+            class="text-blue-500"
+            key={key}
+            href={node.href}
+            target="_blank"
+            rel="noopener"
+          >
             {node.content.length === 0 ? node.href : node.content}
           </a>
         )

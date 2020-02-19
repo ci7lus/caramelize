@@ -15,6 +15,7 @@ export const TheFooter = tsx.component({
               href="https://github.com/ci7lus/caramelize"
               target="_blank"
               class="px-1 text-blue-500"
+              rel="noopener"
             >
               Caramelize
             </a>

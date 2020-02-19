@@ -205,14 +205,14 @@ export const lineNodeTypeRender = (
       )
     case "hashTag":
       return (
-        <nuxt-link
+        <button
           key={key}
-          tag="a"
-          to={`/tags/${node.href}`}
+          type="button"
           class="inline-block bg-gray-600 p-2 py-1 text-xs font-semibold mr-2 rounded"
+          aria-label={`${node.href} の投稿一覧`}
         >
-          #{node.href}
-        </nuxt-link>
+          <nuxt-link to={`/tags/${node.href}`}>#{node.href}</nuxt-link>
+        </button>
       )
     case "link":
       if (node.href.startsWith("http")) {

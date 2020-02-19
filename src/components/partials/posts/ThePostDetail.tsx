@@ -102,6 +102,7 @@ export const ThePostDetail = tsx.component({
             <img
               class="w-10 h-10 mr-2 bg-gray-600 rounded"
               src={this.post.user.photo}
+              alt="著者の画像"
               loading="lazy"
             />
             <div class="text-sm">
@@ -239,7 +240,7 @@ export const lineNodeTypeRender = (
       }
     case "icon":
       if (node.path.includes("[")) {
-        return <img class="w-6 inline" key={key} />
+        return
       }
       switch (node.pathType) {
         case "relative":
@@ -251,6 +252,7 @@ export const lineNodeTypeRender = (
               )}/icon`}
               loading="lazy"
               key={key}
+              alt={`${node.path} のアイコン`}
             />
           )
         case "root":
@@ -259,6 +261,7 @@ export const lineNodeTypeRender = (
               class="w-6 inline"
               src={`https://scrapbox.io/api/pages${node.path}/icon`}
               loading="lazy"
+              alt={`${node.path} のアイコン`}
               key={key}
             />
           )
@@ -272,7 +275,7 @@ export const lineNodeTypeRender = (
     case "image":
       return (
         <div key={key}>
-          <img src={node.src} loading="lazy" />
+          <img src={node.src} loading="lazy" alt="" />
         </div>
       )
     case "plain":

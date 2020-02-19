@@ -11,6 +11,7 @@ export const PostTag = tsx.component({
   render(): VNode {
     return (
       <button
+        aria-label={`${this.tag} の投稿一覧`}
         type="button"
         onClick={(event: Event) => {
           event.preventDefault()

@@ -42,7 +42,7 @@ export const TheHeader = tsx.component({
                   target="_blank"
                   rel="noopener"
                 >
-                  <button class="ml-2">
+                  <button class="ml-2" aria-label="著者の Twitter">
                     <div class="flex items-center justify-center rounded-md p-2 bg-gray-800">
                       <FeatherTwitterIcon size={14} />
                     </div>
@@ -55,7 +55,7 @@ export const TheHeader = tsx.component({
                   target="_blank"
                   rel="noopener"
                 >
-                  <button class="ml-2">
+                  <button class="ml-2" aria-label="著者の GitHub">
                     <div class="flex items-center justify-center rounded-md p-2 bg-gray-800">
                       <FeatherGithubIcon size={14} />
                     </div>

@@ -74,6 +74,7 @@ export const ThePostDetail = tsx.component({
         <div class="flex items-center justify-center flex-col md:flex-row">
           <div class="flex items-center justify-center p-2 text-center text-sm">
             <button
+              aria-label="Twitter シェアボタン "
               class="bg-twitter text-white font-bold py-2 px-3 rounded-md m-2 text-sm"
               onClick={(e: any) => {
                 window.open(
@@ -114,7 +115,7 @@ export const ThePostDetail = tsx.component({
                   target="_blank"
                   rel="noopener"
                 >
-                  <button>
+                  <button aria-label="著者の Twitter">
                     <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800">
                       <FeatherTwitterIcon size={14} />
                     </div>
@@ -129,7 +130,7 @@ export const ThePostDetail = tsx.component({
                   target="_blank"
                   rel="noopener"
                 >
-                  <button>
+                  <button aria-label="著者の GitHub">
                     <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800">
                       <FeatherGithubIcon size={14} />
                     </div>

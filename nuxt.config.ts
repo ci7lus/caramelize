@@ -17,6 +17,9 @@ const config: Configuration = {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: "ja",
+    },
     titleTemplate: `%s | ${SITE_NAME}`,
     meta: [
       { charset: "utf-8" },

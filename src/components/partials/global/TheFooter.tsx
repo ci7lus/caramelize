@@ -1,7 +1,7 @@
 import Vue, { VNode } from "vue"
 import * as tsx from "vue-tsx-support"
 import { FeatherHeartIcon } from "~/components/commons/FeatherIcons"
-import { SITE_NAME } from "~/config"
+import { SITE_NAME, GA } from "~/config"
 
 export const TheFooter = tsx.component({
   name: "TheFooter",
@@ -23,6 +23,12 @@ export const TheFooter = tsx.component({
             <span class="pl-1">
               <FeatherHeartIcon size={12} />
             </span>
+            {GA && (
+              <span class="text-gray-400">
+                &nbsp;/&nbsp;
+                <nuxt-link to="/privacy-policy">Privacy</nuxt-link>
+              </span>
+            )}
           </div>
         </div>
       </div>

@@ -177,19 +177,19 @@ export const lineNodeTypeRender = (
               decorationTags.push("font-bold")
               const size = parseInt(deco.replace("*-", ""))
               if (!Number.isNaN(size)) {
-                if (9 <= size) {
+                if (8 <= size) {
                   decorationTags.push("text-6xl")
-                } else if (8 <= size) {
-                  decorationTags.push("text-5xl")
                 } else if (7 <= size) {
-                  decorationTags.push("text-4xl")
+                  decorationTags.push("text-5xl")
                 } else if (6 <= size) {
-                  decorationTags.push("text-3xl")
+                  decorationTags.push("text-4xl")
                 } else if (5 <= size) {
-                  decorationTags.push("text-2xl")
+                  decorationTags.push("text-3xl")
                 } else if (4 <= size) {
-                  decorationTags.push("text-xl")
+                  decorationTags.push("text-2xl")
                 } else if (3 <= size) {
+                  decorationTags.push("text-xl")
+                } else if (2 <= size) {
                   decorationTags.push("text-lg")
                 }
               }
@@ -316,13 +316,13 @@ export const contentRender = (content: PageType, h: CreateElement) => {
         }
         if (line.indent === 0) {
           return (
-            <div class={`pl-${line.indent * 4}`} key={`line-${l}`}>
+            <div style={{ paddingLeft: `${line.indent}rem` }} key={`line-${l}`}>
               {line.nodes.map((node, k) => lineNodeTypeRender(node, k, h))}
             </div>
           )
         } else {
           return (
-            <ul class={`pl-${line.indent * 4}`} key={`line-${l}`}>
+            <ul style={{ paddingLeft: `${line.indent}rem` }} key={`line-${l}`}>
               <li>
                 {line.nodes.map((node, k) => lineNodeTypeRender(node, k, h))}
               </li>

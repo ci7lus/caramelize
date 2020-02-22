@@ -8,10 +8,7 @@ import { Post } from "~/types/struct"
 import { parse } from "@tosuke/scrapbox-parser"
 import querystring from "querystring"
 import dayjs from "dayjs"
-import utc from "dayjs/plugin/utc"
 import { SCRAPBOX_PROJECT, SCRAPBOX_TAG, SCRAPBOX_SORT } from "~/config"
-
-dayjs.extend(utc)
 
 export const getPageMeta = async (projectName: string, pageName: string) => {
   const url = process.server
@@ -54,14 +51,8 @@ export const getPost = async (slug: string) => {
     content: parsed,
     user: meta.user,
     tags,
-    createdAt: dayjs(meta.created * 1000)
-      .utc()
-      .add(9, "hour")
-      .format(),
-    updatedAt: dayjs(meta.updated * 1000)
-      .utc()
-      .add(9, "hour")
-      .format(),
+    createdAt: dayjs(meta.created * 1000).format(),
+    updatedAt: dayjs(meta.updated * 1000).format(),
   }
   return data
 }
@@ -133,14 +124,8 @@ export const getPosts = async (
         image: page.image?.replace("/raw", "/thumb/1000") || null,
         user: page.user,
         tags,
-        createdAt: dayjs(page.created * 1000)
-          .utc()
-          .add(9, "hour")
-          .format(),
-        updatedAt: dayjs(page.updated * 1000)
-          .utc()
-          .add(9, "hour")
-          .format(),
+        createdAt: dayjs(page.created * 1000).format(),
+        updatedAt: dayjs(page.updated * 1000).format(),
       }
       return p
     })

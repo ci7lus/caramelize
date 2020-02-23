@@ -257,13 +257,19 @@ export const lineNodeTypeRender = (
           )
         case "root":
           return (
-            <img
-              class="w-6 inline"
-              src={`https://scrapbox.io/api/pages${node.path}/icon`}
-              loading="lazy"
-              alt={`${node.path} のアイコン`}
+            <a
               key={key}
-            />
+              href={`https://scrapbox.io${node.path}`}
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="w-6 inline"
+                src={`https://scrapbox.io/api/pages${node.path}/icon`}
+                loading="lazy"
+                alt={`${node.path} のアイコン`}
+              />
+            </a>
           )
         default:
           return (

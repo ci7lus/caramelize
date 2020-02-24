@@ -10,6 +10,7 @@ import {
   GSV,
   GITHUB_ID,
 } from "./src/config"
+import { routesGenerator } from "./src/utils/sitemap"
 
 const config: Configuration = {
   mode: "universal",
@@ -109,6 +110,15 @@ const config: Configuration = {
     SITE_ROOT: SITE_ROOT!,
     GA: GA!,
   },
+}
+
+if (SITE_ROOT && isProduction) {
+  config.modules!.push("@nuxtjs/sitemap")
+  config.sitemap = {
+    path: "/sitemap.xml",
+    hostname: `https://${SITE_ROOT}`,
+    routes: routesGenerator,
+  }
 }
 
 if (GSV && isProduction) {

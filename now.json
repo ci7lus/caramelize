@@ -4,7 +4,9 @@
     {
       "src": "nuxt.config.ts",
       "use": "@nuxtjs/now-builder",
-      "config": {}
+      "config": {
+        "serverFiles": ["./.nuxt/dist/sitemap-routes.json"]
+      }
     }
   ],
   "routes": [

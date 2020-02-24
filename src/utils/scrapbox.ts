@@ -3,19 +3,19 @@ import {
   ScrapboxError,
   ScrapboxPage,
   ScrapboxSearchResult,
-} from "~/types/scrapbox"
-import { Post } from "~/types/struct"
+} from "../types/scrapbox"
+import { Post } from "../types/struct"
 import { parse } from "@tosuke/scrapbox-parser"
 import querystring from "querystring"
 import dayjs from "dayjs"
-import { SCRAPBOX_PROJECT, SCRAPBOX_TAG, SCRAPBOX_SORT } from "~/config"
+import { SCRAPBOX_PROJECT, SCRAPBOX_TAG, SCRAPBOX_SORT } from "../config"
 
 export const getPageMeta = async (projectName: string, pageName: string) => {
-  const url = process.server
-    ? `https://scrapbox.io/api/pages/${projectName}/${encodeURIComponent(
+  const url = process.client
+    ? `/api/${encodeURIComponent(pageName)}?followRename=true`
+    : `https://scrapbox.io/api/pages/${projectName}/${encodeURIComponent(
         pageName
       )}?followRename=true`
-    : `/api/${encodeURIComponent(pageName)}?followRename=true`
 
   const res = await fetch(url)
   if (res.status !== 200) {
@@ -70,9 +70,9 @@ export const getPostsMaster = async (
     q,
   })
 
-  const url = process.server
-    ? `https://scrapbox.io/api/pages/${SCRAPBOX_PROJECT}/search/query?${qs}`
-    : `/api/search/query?${qs}`
+  const url = process.client
+    ? `/api/search/query?${qs}`
+    : `https://scrapbox.io/api/pages/${SCRAPBOX_PROJECT}/search/query?${qs}`
 
   const res = await fetch(url)
   if (!res.ok) {

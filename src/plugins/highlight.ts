@@ -81,6 +81,8 @@ export const languages: { [k: string]: any } = {
   php: php,
   powershell: powershell,
   python: python,
+  py: python,
+  ipynb: python,
   r: r,
   rb: ruby,
   ruby: ruby,

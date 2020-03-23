@@ -94,13 +94,13 @@ export const ThePostDetail = tsx.component({
               &nbsp;Tweet
             </button>
           </div>
-          <div class="hidden md:block py-6 px-1 bg-gray-800" />
+          <div class="hidden md:block py-6 px-1 bg-gray-800 light:bg-gray-400" />
           <div class="flex items-center justify-center p-4 m-2">
             <div class="pr-4">
               <FeatherPenToolIcon />
             </div>
             <img
-              class="w-10 h-10 mr-2 bg-gray-600 rounded"
+              class="w-10 h-10 mr-2 bg-gray-600 rounded light:bg-gray-400"
               src={this.post.user.photo}
               alt="著者の画像"
               loading="lazy"
@@ -117,7 +117,7 @@ export const ThePostDetail = tsx.component({
                   rel="noopener"
                 >
                   <button aria-label="著者の Twitter">
-                    <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800">
+                    <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800 light:bg-blue-300 light:text-gray-100">
                       <FeatherTwitterIcon size={14} />
                     </div>
                   </button>
@@ -132,7 +132,7 @@ export const ThePostDetail = tsx.component({
                   rel="noopener"
                 >
                   <button aria-label="著者の GitHub">
-                    <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800">
+                    <div class="p-2 flex items-center justify-center leading-none rounded-md bg-gray-800 light:bg-gray-800 light:text-gray-100">
                       <FeatherGithubIcon size={14} />
                     </div>
                   </button>
@@ -208,7 +208,7 @@ export const lineNodeTypeRender = (
         <button
           key={key}
           type="button"
-          class="inline-block bg-gray-600 p-2 py-1 text-xs font-semibold mr-2 rounded"
+          class="inline-block bg-gray-600 p-2 py-1 text-xs font-semibold mr-2 rounded light:bg-gray-300"
           aria-label={`${node.href} の投稿一覧`}
         >
           <nuxt-link to={`/tags/${node.href}`}>#{node.href}</nuxt-link>
@@ -273,7 +273,7 @@ export const lineNodeTypeRender = (
           )
         default:
           return (
-            <p class="text-gray-600 text-sm" key={key}>
+            <p class="text-gray-600 text-sm light:texr-gray-400" key={key}>
               not supported icon ({node!.pathType})
             </p>
           )
@@ -288,7 +288,10 @@ export const lineNodeTypeRender = (
       return <span key={key}>{node.text}</span>
     case "quote":
       return (
-        <p key={key} class="border-l-4 pl-2 border-gray-600 bg-gray-900">
+        <p
+          key={key}
+          class="border-l-4 pl-2 border-gray-600 bg-gray-900 light:bg-gray-200 light:border-gray-400"
+        >
           {node.nodes.map((childNode, k) =>
             lineNodeTypeRender(childNode, k, h)
           )}
@@ -304,7 +307,7 @@ export const lineNodeTypeRender = (
       )
     default:
       return (
-        <p class="text-gray-600 text-sm" key={key}>
+        <p class="text-gray-600 text-sm light:text-gray-400" key={key}>
           not supported ({node!.type})
         </p>
       )
@@ -342,7 +345,7 @@ export const contentRender = (content: PageType, h: CreateElement) => {
           .pop()!
         return (
           <div class="text-sm leading-relaxed py-2">
-            <code class="bg-gray-800">{line.fileName}</code>
+            <code class="bg-gray-800 light:bg-gray-200">{line.fileName}</code>
             <highlight-code lang={languages[ext] && ext}>
               <pre>{line.content}</pre>
             </highlight-code>

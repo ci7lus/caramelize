@@ -2,6 +2,16 @@ body {
   background-color: black;
 }
 
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #edf2f7;
+  }
+
+  .logo {
+    filter: brightness(0.2);
+  }
+}
+
 img[lazy] {
   transition: all 0.3s ease-out;
 }

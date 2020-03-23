@@ -7,9 +7,9 @@ export const TheFooter = tsx.component({
   name: "TheFooter",
   render(): VNode {
     return (
-      <div class="bg-gray-900">
+      <div class="bg-gray-900 light:bg-gray-100">
         <div class="container mx-auto max-w-screen-md">
-          <div class="flex justify-end text-xs p-4 text-gray-200">
+          <div class="flex justify-end text-xs p-4 text-gray-200 light:text-gray-800">
             {SITE_NAME} - Made with
             <a
               href="https://github.com/ci7lus/caramelize"
@@ -24,7 +24,7 @@ export const TheFooter = tsx.component({
               <FeatherHeartIcon size={12} />
             </span>
             {GA && (
-              <span class="text-gray-400">
+              <span class="text-gray-400 light:text-gray-800">
                 &nbsp;/&nbsp;
                 <nuxt-link to="/privacy-policy">Privacy</nuxt-link>
               </span>

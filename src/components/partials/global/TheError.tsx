@@ -13,7 +13,7 @@ export const TheError = tsx.component({
   },
   render(): VNode {
     return (
-      <div class="flex-1 bg-black m-auto">
+      <div class="flex-1 bg-black m-auto light:bg-gray-200">
         <div class="container max-w-screen-md m-auto p-4">
           <div class="text-6xl">{this.statusCode}</div>
           <p>{this.error.message}</p>

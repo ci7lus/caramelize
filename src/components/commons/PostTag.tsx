@@ -18,7 +18,7 @@ export const PostTag = tsx.component({
           event.stopPropagation()
           this.$emit("click", this.tag)
         }}
-        class="inline-block bg-gray-700 p-3 py-1 text-xs font-semibold mr-2 rounded"
+        class="inline-block bg-gray-700 p-3 py-1 text-xs font-semibold mr-2 rounded light:bg-gray-300"
       >
         #{this.tag}
       </button>

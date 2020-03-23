@@ -1,7 +1,9 @@
 <template>
-  <div class="min-h-screen w-full flex flex-col text-gray-200">
+  <div
+    class="min-h-screen w-full flex flex-col text-gray-200 light:text-gray-800"
+  >
     <TheHeader />
-    <div class="flex-1 bg-black">
+    <div class="flex-1 bg-black light:bg-gray-200">
       <nuxt />
     </div>
     <TheFooter />

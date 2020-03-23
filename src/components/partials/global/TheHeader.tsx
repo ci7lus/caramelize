@@ -10,7 +10,7 @@ export const TheHeader = tsx.component({
   name: "TheHeader",
   render(): VNode {
     return (
-      <div class="bg-gray-900">
+      <div class="bg-gray-900 light:bg-gray-100">
         <div class="flex items-center container mx-auto flex justify-between max-w-screen-md">
           <div class="flex items-center justify-start">
             <nuxt-link to="/" tag="a">
@@ -22,10 +22,11 @@ export const TheHeader = tsx.component({
                     loading="auto"
                     width="100"
                     height="30"
+                    class="logo"
                   />
                 ) : (
                   <h1
-                    class="font-bold text-lg"
+                    class="font-bold text-lg light:text-gray-900"
                     style={{ fontFamily: "Avenir Next" }}
                   >
                     {SITE_NAME}
@@ -43,7 +44,7 @@ export const TheHeader = tsx.component({
                   rel="noopener"
                 >
                   <button class="ml-2" aria-label="著者の Twitter">
-                    <div class="flex items-center justify-center rounded-md p-2 bg-gray-800">
+                    <div class="flex items-center justify-center rounded-md p-2 bg-gray-800 light:bg-blue-300 light:text-gray-100">
                       <FeatherTwitterIcon size={14} />
                     </div>
                   </button>
@@ -56,7 +57,7 @@ export const TheHeader = tsx.component({
                   rel="noopener"
                 >
                   <button class="ml-2" aria-label="著者の GitHub">
-                    <div class="flex items-center justify-center rounded-md p-2 bg-gray-800">
+                    <div class="flex items-center justify-center rounded-md p-2 bg-gray-800 light:bg-gray-800 light:text-gray-100">
                       <FeatherGithubIcon size={14} />
                     </div>
                   </button>

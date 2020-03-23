@@ -39,13 +39,13 @@ export const PostCard = tsx.component({
           <div class="md:max-w-full md:flex items-stretch py-4 block">
             {this.post.image ? (
               <div
-                class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center"
+                class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center light:bg-gray-400"
                 style={{ backgroundImage: `url("${this.post.image}")` }}
               />
             ) : (
-              <div class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center" />
+              <div class="h-48 md:h-auto md:w-1/4 flex-none bg-cover text-center bg-gray-700 rounded-t lg:rounded-t-none lg:rounded-l bg-cover bg-center light:bg-gray-400" />
             )}
-            <div class="bg-gray-800 p-4 flex flex-col justify-between leading-normal rounded-b lg:rounded-b-none lg:rounded-r md:w-3/4">
+            <div class="bg-gray-800 p-4 flex flex-col justify-between leading-normal rounded-b lg:rounded-b-none lg:rounded-r md:w-3/4 light:bg-gray-100">
               <div class="mb-4">
                 <div class="pb-2">
                   {this.post.tags.map(tag => (

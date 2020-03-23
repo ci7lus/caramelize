@@ -5,7 +5,13 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
-  theme: {},
+  theme: {
+    extend: {
+      screens: {
+        light: { raw: "(prefers-color-scheme: light)" },
+      },
+    },
+  },
   variants: {},
   plugins: [],
 }

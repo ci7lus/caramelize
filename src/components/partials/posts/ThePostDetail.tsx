@@ -42,17 +42,11 @@ export const ThePostDetail = tsx.component({
           <span class="pr-2">
             <FeatherEditIcon />
           </span>
-          {dayjs(this.post.createdAt)
-            .utc()
-            .add(9, "hour")
-            .format(formatString)}
+          {dayjs(this.post.createdAt).utc().add(9, "hour").format(formatString)}
           <span class="px-2">
             <FeatherClockIcon />
           </span>
-          {dayjs(this.post.updatedAt)
-            .utc()
-            .add(9, "hour")
-            .format(formatString)}
+          {dayjs(this.post.updatedAt).utc().add(9, "hour").format(formatString)}
         </p>
         <div class="content leading-loose break-words">
           {contentRender(this.post.content!, h)}
@@ -164,7 +158,7 @@ export const lineNodeTypeRender = (
       )
     case "decoration":
       const decorationTags: string[] = []
-      node.decos.map(deco => {
+      node.decos.map((deco) => {
         switch (deco) {
           case "/":
             decorationTags.push("italic")
@@ -339,10 +333,7 @@ export const contentRender = (content: PageType, h: CreateElement) => {
           )
         }
       case "codeBlock":
-        const ext = line.fileName
-          .trim()
-          .split(".")
-          .pop()!
+        const ext = line.fileName.trim().split(".").pop()!
         return (
           <div class="text-sm leading-relaxed py-2">
             <code class="bg-gray-800 light:bg-gray-200">{line.fileName}</code>

@@ -35,14 +35,14 @@ export const getPost = async (slug: string) => {
   if (meta === null) {
     return null
   }
-  const text = meta.lines.map(line => line.text).join(" \n")
+  const text = meta.lines.map((line) => line.text).join(" \n")
   if (!text.toLowerCase().includes(`${SCRAPBOX_TAG.toLowerCase()} `)) {
     return null
   }
   const parsed = parse(text)
   const tags = meta.links
-    .filter(link => text.includes(`#${link}`))
-    .filter(tag => tag.toLowerCase() !== "blog")
+    .filter((link) => text.includes(`#${link}`))
+    .filter((tag) => tag.toLowerCase() !== "blog")
   const data: Post = {
     id: meta.id,
     title: meta.title,
@@ -98,24 +98,24 @@ export const getPosts = async (
   }
 
   return body.pages
-    .filter(page =>
+    .filter((page) =>
       page.snipet[0]
         .replace(/\<(\/|).+?\>/g, "")
         .toLowerCase()
         .includes(`${SCRAPBOX_TAG.toLowerCase()} `)
     )
     .slice(page * limit, page * limit + limit)
-    .map(page => {
+    .map((page) => {
       const tags =
         page.snipet.length !== 0
           ? page.snipet[0]
               .replace(/\<(\/|).+?\>/g, "")
               .split(" ")
-              .filter(tag => tag.includes("#"))
+              .filter((tag) => tag.includes("#"))
               .join(" ")
               .replace(/#/g, "")
               .split(" ")
-              .filter(tag => tag.toLowerCase() !== "blog")
+              .filter((tag) => tag.toLowerCase() !== "blog")
           : []
       const p: Omit<Post, "content"> = {
         id: page.id,

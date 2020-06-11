@@ -275,7 +275,13 @@ export const lineNodeTypeRender = (
     case "image":
       return (
         <div key={key}>
-          <img src={node.src} loading="lazy" alt="" />
+          {0 < node.link.length ? (
+            <a href={node.link} target="_blank" rel="noopener">
+              <img src={node.src} loading="lazy" alt="" />
+            </a>
+          ) : (
+            <img src={node.src} loading="lazy" alt="" />
+          )}
         </div>
       )
     case "plain":

@@ -20,7 +20,7 @@
     "dayjs": "^1.8.28",
     "highlight.js": "^9.18.1",
     "highlightjs-vue": "^1.0.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "nuxt": "^2.12.2",
     "transform-ts": "^0.3.0",
     "vue-feather-icons": "^5.0.0",

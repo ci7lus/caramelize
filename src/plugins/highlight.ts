@@ -107,6 +107,7 @@ const RegisterPlugin: Plugin = () => {
     hljs.registerLanguage(language, parser)
   })
 
+  /* vue-highlight.jsのhighlight.js@10対応待ち */
   Vue.use(VueHighlightJS, {
     languages,
   })

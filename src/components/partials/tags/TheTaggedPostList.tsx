@@ -28,7 +28,7 @@ export const TheTaggedPostList = tsx.component({
       <div class="container mx-auto max-w-screen-md">
         <div class="p-4">
           <h1 class="border-b border-l-4 border-gray-400 pl-2 py-1 font-bold">
-            #{xss.filterXSS(this.tag)} のついた投稿 ({this.page + 1}ページ目)
+            #{xss(this.tag)} のついた投稿 ({this.page + 1}ページ目)
           </h1>
           {this.posts.map((post) => (
             <PostCard post={post} key={post.title} />

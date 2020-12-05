@@ -19,6 +19,7 @@ export default Vue.extend({
 
       return { page, posts }
     } catch (e) {
+      console.error(e)
       return error({ statusCode: 500 })
     }
   },

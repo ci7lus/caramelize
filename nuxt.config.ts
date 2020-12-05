@@ -1,4 +1,4 @@
-import { Configuration } from "@nuxt/types"
+import {  NuxtConfig } from "@nuxt/types"
 import {
   SITE_NAME,
   TWITTER_ID,
@@ -12,8 +12,7 @@ import {
 } from "./src/config"
 import { routesGenerator } from "./src/utils/sitemap"
 
-const config: Configuration = {
-  mode: "universal",
+const config: NuxtConfig = {
   /*
    ** Headers of the page
    */
@@ -69,8 +68,8 @@ const config: Configuration = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {},
     parallel: true,
+    analyze: process.env.ANALYZE === 'yes'
   },
   buildModules: ["@nuxtjs/tailwindcss", "@nuxt/typescript-build"],
   purgeCSS: {
@@ -121,12 +120,13 @@ if (SITE_ROOT && isProduction) {
   }
 }
 
-if (GSV && isProduction) {
-  config.head!.meta!.push({
+if (GSV && isProduction && typeof config.head === 'object') {
+  typeof config.head?.meta?.push({
     hid: "google-site-verification",
     name: "google-site-verification",
     content: GSV,
   })
+
 }
 
 if (GA && isProduction) {
@@ -138,7 +138,7 @@ if (GA && isProduction) {
   ])
 }
 
-if (TWITTER_ID) {
+if (TWITTER_ID && typeof config.head === 'object') {
   config.head!.meta!.push({
     hid: "twitter:site",
     name: "twitter:site",

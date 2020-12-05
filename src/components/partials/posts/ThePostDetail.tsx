@@ -199,14 +199,16 @@ export const lineNodeTypeRender = (
       )
     case "hashTag":
       return (
-        <button
-          key={key}
-          type="button"
-          class="inline-block bg-gray-600 p-2 py-1 text-xs font-semibold mr-2 rounded light:bg-gray-300"
-          aria-label={`${node.href} の投稿一覧`}
-        >
-          <nuxt-link to={`/tags/${node.href}`}>#{node.href}</nuxt-link>
-        </button>
+        <nuxt-link to={`/tags/${node.href}`}>
+          <button
+            key={key}
+            type="button"
+            class="inline-block bg-gray-600 p-2 py-1 text-xs font-semibold mr-2 rounded light:bg-gray-300"
+            aria-label={`${node.href} の投稿一覧`}
+          >
+            #{node.href}
+          </button>
+        </nuxt-link>
       )
     case "link":
       if (node.href.startsWith("http")) {
@@ -268,7 +270,7 @@ export const lineNodeTypeRender = (
         default:
           return (
             <p class="text-gray-600 text-sm light:texr-gray-400" key={key}>
-              not supported icon ({node!.pathType})
+              not supported icon
             </p>
           )
       }

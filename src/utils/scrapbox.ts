@@ -99,7 +99,7 @@ export const getPosts = async (
 
   return body.pages
     .filter((page) =>
-      page.snipet[0]
+      page.lines[0]
         .replace(/\<(\/|).+?\>/g, "")
         .toLowerCase()
         .includes(`${SCRAPBOX_TAG.toLowerCase()} `)
@@ -107,8 +107,8 @@ export const getPosts = async (
     .slice(page * limit, page * limit + limit)
     .map((page) => {
       const tags =
-        page.snipet.length !== 0
-          ? page.snipet[0]
+        page.lines.length !== 0
+          ? page.lines[0]
               .replace(/\<(\/|).+?\>/g, "")
               .split(" ")
               .filter((tag) => tag.includes("#"))

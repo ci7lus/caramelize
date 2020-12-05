@@ -56,7 +56,9 @@ export type ScrapboxSearchResult = {
   searchQuery: string
   limit: number
   count: number
-  pages: (Omit<ScrapboxPage, "content"> & { snipet: string[] })[]
+  pages: (Omit<ScrapboxPage, "content"> & {
+    lines: string[]
+  })[]
   existsExactTitleMatch: boolean
   query: {
     words: string[]

@@ -1,4 +1,4 @@
-import {  NuxtConfig } from "@nuxt/types"
+import { NuxtConfig } from "@nuxt/types"
 import {
   SITE_NAME,
   TWITTER_ID,
@@ -10,7 +10,6 @@ import {
   GSV,
   GITHUB_ID,
 } from "./src/config"
-import { routesGenerator } from "./src/utils/sitemap"
 
 const config: NuxtConfig = {
   /*
@@ -69,7 +68,7 @@ const config: NuxtConfig = {
      ** You can extend webpack config here
      */
     parallel: true,
-    analyze: process.env.ANALYZE === 'yes'
+    analyze: process.env.ANALYZE === "yes",
   },
   buildModules: ["@nuxtjs/tailwindcss", "@nuxt/typescript-build"],
   purgeCSS: {
@@ -111,22 +110,12 @@ const config: NuxtConfig = {
   },
 }
 
-if (SITE_ROOT && isProduction) {
-  config.modules!.push("@nuxtjs/sitemap")
-  config.sitemap = {
-    path: "/sitemap.xml",
-    hostname: `https://${SITE_ROOT}`,
-    routes: routesGenerator,
-  }
-}
-
-if (GSV && isProduction && typeof config.head === 'object') {
+if (GSV && isProduction && typeof config.head === "object") {
   typeof config.head?.meta?.push({
     hid: "google-site-verification",
     name: "google-site-verification",
     content: GSV,
   })
-
 }
 
 if (GA && isProduction) {
@@ -138,7 +127,7 @@ if (GA && isProduction) {
   ])
 }
 
-if (TWITTER_ID && typeof config.head === 'object') {
+if (TWITTER_ID && typeof config.head === "object") {
   config.head!.meta!.push({
     hid: "twitter:site",
     name: "twitter:site",

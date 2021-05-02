@@ -56,7 +56,7 @@ export type ScrapboxSearchResult = {
   searchQuery: string
   limit: number
   count: number
-  pages: (Omit<ScrapboxPage, "content"> & {
+  pages: (Omit<ScrapboxPage, "content" | "descriptions"> & {
     lines: string[]
   })[]
   existsExactTitleMatch: boolean

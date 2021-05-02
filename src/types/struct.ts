@@ -12,3 +12,8 @@ export type Post = {
   createdAt: string
   updatedAt: string
 }
+
+export type PostSummary = Omit<
+  Post,
+  "content" | "description" | "createdAt" | "updatedAt"
+>

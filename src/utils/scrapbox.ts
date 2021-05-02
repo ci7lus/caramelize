@@ -4,7 +4,7 @@ import {
   ScrapboxPage,
   ScrapboxSearchResult,
 } from "../types/scrapbox"
-import { Post } from "../types/struct"
+import { Post, PostSummary } from "../types/struct"
 import { parse } from "@tosuke/scrapbox-parser"
 import querystring from "querystring"
 import dayjs from "dayjs"
@@ -117,15 +117,12 @@ export const getPosts = async (
               .split(" ")
               .filter((tag) => tag.toLowerCase() !== "blog")
           : []
-      const p: Omit<Post, "content"> = {
+      const p: PostSummary = {
         id: page.id,
         title: page.title,
-        description: page.descriptions.join(" ").slice(0, 100),
         image: page.image?.replace("/raw", "/thumb/1000") || null,
         user: page.user,
         tags,
-        createdAt: dayjs(page.created * 1000).format(),
-        updatedAt: dayjs(page.updated * 1000).format(),
       }
       return p
     })
